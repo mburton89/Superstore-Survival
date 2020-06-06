@@ -4,7 +4,7 @@ using UnityEngine.AI;
 
 namespace UnityStandardAssets.Characters.ThirdPerson
 {
-    public class BasicAI : MonoBehaviour
+    public class CameraSight : MonoBehaviour
     {
         public NavMeshAgent agent;
         public ThirdPersonCharacter character;
@@ -18,12 +18,22 @@ namespace UnityStandardAssets.Characters.ThirdPerson
         public State state;
         private bool alive;
 
+        //Variables for Patrolling
         public GameObject[] waypoints;
         private int waypointInd;
         public float patrolSpeed = 0.5f;
 
+        //Variables for Chasing
         public float chaseSpeed = 1f;
         public GameObject target;
+
+        //Variables for camera sight
+        public GameObject player;
+        public Collider playerColl;
+        public Camera myCam;
+        private Plane[] planes;
+
+        public float sightDist = 10;
 
         void Start()
         {
@@ -36,7 +46,9 @@ namespace UnityStandardAssets.Characters.ThirdPerson
             waypoints = GameObject.FindGameObjectsWithTag("Waypoint");
             waypointInd = Random.Range(0, waypoints.Length);
 
-            state = BasicAI.State.PATROL;
+            playerColl = player.GetComponent<Collider>();
+
+            state = CameraSight.State.PATROL;
 
             alive = true;
 
@@ -50,10 +62,10 @@ namespace UnityStandardAssets.Characters.ThirdPerson
                 switch (state)
                 {
                     case State.PATROL:
-                        Patrol ();
+                        Patrol();
                         break;
                     case State.CHASE:
-                        Chase ();
+                        Chase();
                         break;
                 }
                 yield return null;
@@ -68,13 +80,13 @@ namespace UnityStandardAssets.Characters.ThirdPerson
                 agent.SetDestination(waypoints[waypointInd].transform.position);
                 character.Move(agent.desiredVelocity, false, false);
             }
-            else if (Vector3.Distance(this.transform.position, waypoints[waypointInd].transform.position) <=2)
+            else if (Vector3.Distance(this.transform.position, waypoints[waypointInd].transform.position) <= 2)
             {
                 waypointInd = Random.Range(0, waypoints.Length);
             }
             else
             {
-                character.Move (Vector3.zero, false, false);
+                character.Move(Vector3.zero, false, false);
             }
         }
 
@@ -85,14 +97,27 @@ namespace UnityStandardAssets.Characters.ThirdPerson
             character.Move(agent.desiredVelocity, false, false);
         }
 
-        void OnTriggerEnter (Collider coll)
+        void Update()
         {
-            if (coll.CompareTag("Player"))
+            planes = GeometryUtility.CalculateFrustumPlanes(myCam);
+            if (GeometryUtility.TestPlanesAABB(planes, playerColl.bounds))
             {
-                state = BasicAI.State.CHASE;
-                target = coll.gameObject;
+                Debug.Log("Player Sighted!");
+                CheckForPlayer();
+            }
+            else
+            {  }
+        }
+
+        void CheckForPlayer()
+        {
+            RaycastHit hit;
+            Debug.DrawRay(myCam.transform.position, transform.forward * 10, Color.green);
+            if (Physics.Raycast (myCam.transform.position, transform.forward, out hit, 10))
+            {
+                state = CameraSight.State.CHASE;
+                target = hit.collider.gameObject;
             }
         }
     }
 }
-
