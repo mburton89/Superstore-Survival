@@ -1,4 +1,5 @@
 ﻿using System.Collections;
+using TMPro;
 using UnityEngine;
 using UnityEngine.AI;
 using UnityStandardAssets.Characters.FirstPerson;
@@ -9,6 +10,7 @@ namespace UnityStandardAssets.Characters.ThirdPerson
     {
         public NavMeshAgent agent;
         public ThirdPersonCharacter character;
+        private bool pauseGame = false;
 
         public enum State
         {
@@ -221,6 +223,21 @@ namespace UnityStandardAssets.Characters.ThirdPerson
             if (coll.collider.CompareTag("Player"))
             {
                 YouLose.Instance.Show();
+                ToggleTime();
+            }
+        }
+
+        private void ToggleTime()
+        {
+            pauseGame = !pauseGame;
+
+            if (pauseGame)
+            {
+                Time.timeScale = 0;
+            }
+            else
+            {
+                Time.timeScale = 1;
             }
         }
     }
