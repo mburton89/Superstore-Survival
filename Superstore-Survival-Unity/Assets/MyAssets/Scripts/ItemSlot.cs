@@ -44,10 +44,7 @@ public class ItemSlot : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
 
     public void OnPointerEnter(PointerEventData eventData)
     {
-        if (Item is EquipableItem)
-        {
-            tooltip.ShowTooltip((EquipableItem)Item);
-        }
+        tooltip.ShowTooltip((EquipableItem)Item);
     }
 
     public void OnPointerExit(PointerEventData eventData)

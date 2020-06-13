@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System.Text;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
@@ -12,7 +13,7 @@ public class ItemTooltip : MonoBehaviour
     {
         ItemNameText.text = item.ItemName;
 
-        ItemTypeText.text = item.ItemType.ToString();
+        ItemTypeText.text = item.ItemType.ToString() + " Item";
         
         gameObject.SetActive(true);
     }
