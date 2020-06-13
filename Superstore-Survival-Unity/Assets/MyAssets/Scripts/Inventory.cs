@@ -1,13 +1,24 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Runtime.Remoting.Messaging;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 public class Inventory : MonoBehaviour, IItemContainer
 {
+    [FormerlySerializedAs("items")]
     [SerializeField] List<Item> startingItems;
     [SerializeField] Transform itemsParent;
     [SerializeField] ItemSlot[] itemSlots;
+
+    public event Action<ItemSlot> OnPointerEnterEvent;
+    public event Action<ItemSlot> OnPointerExitEvent;
+    public event Action<ItemSlot> OnRightClickEvent;
+    public event Action<ItemSlot> OnBeginDragEvent;
+    public event Action<ItemSlot> OnEndDragEvent;
+    public event Action<ItemSlot> OnDragEvent;
+    public event Action<ItemSlot> OnDropEvent;
 
     private void OnValidate()
     {
@@ -35,14 +46,15 @@ public class Inventory : MonoBehaviour, IItemContainer
 
     public bool AddItem(Item item)
     {
-        if (IsFull())
+        for (int i = 0; i < itemSlots.Length; i++)
         {
-            return false;
+            if (itemSlots[i].Item == null)
+            {
+                itemSlots[i].Item = item;
+                return true;
+            }
         }
-
-        startingItems.Add(item);
-        RefreshUI();
-        return true;
+        return false;
     }
 
     public bool RemoveItem(Item item)
@@ -75,7 +87,14 @@ public class Inventory : MonoBehaviour, IItemContainer
 
     public bool IsFull()
     {
-        return startingItems.Count >= itemSlots.Length;
+        for (int i = 0; i < itemSlots.Length; i++)
+        {
+            if (itemSlots[i].Item == null)
+            {
+                return false;
+            }
+        }
+        return true;
     }
 
     public bool ContainsItem(Item item)

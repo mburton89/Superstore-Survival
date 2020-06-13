@@ -8,6 +8,8 @@ namespace UnityStandardAssets.Characters.ThirdPerson
 {
     public class EnemySight : MonoBehaviour
     {
+        public GameObject Player;
+
         public NavMeshAgent agent;
         public ThirdPersonCharacter character;
         private bool pauseGame = false;
@@ -233,6 +235,7 @@ namespace UnityStandardAssets.Characters.ThirdPerson
 
             if (pauseGame)
             {
+                Player.GetComponent<FirstPersonController>().enabled = false;
                 Time.timeScale = 0;
             }
             else
