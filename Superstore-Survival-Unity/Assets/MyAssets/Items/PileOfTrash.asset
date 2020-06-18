@@ -9,9 +9,18 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 02f89c39a3cb8e0498386d46d384e114, type: 3}
-  m_Name: TrashPile
+  m_Script: {fileID: 11500000, guid: 518c63bea50c5b94699dbae67a51a737, type: 3}
+  m_Name: PileOfTrash
   m_EditorClassIdentifier: 
-  id: 42db4340aefa9ac42bbc6cb2034c399f
-  ItemName: Big Pile of Trash
+  id: 7cf0a7480b07b36409eba73debfe27a9
+  ItemName: Pile Of Trash
   Icon: {fileID: 21300000, guid: b06d1a8c48714fb4898be82f4765356e, type: 3}
+  SpeedBonus: 0
+  TimeBonus: 0
+  DetectionBonnus: 0
+  EnemySpeedBonus: 0
+  SpeedPercentBonus: 0
+  TimePercentBonus: 0
+  DetectionPercentBonus: 0
+  EnemySpeedPercentBonus: 0
+  ItemType: 1

@@ -5,7 +5,7 @@ using UnityEngine;
 public enum ItemType
 {
     Base,
-    Craftable,
+    Crafted,
     Special
 }
 
@@ -23,4 +23,13 @@ public class EquipableItem : Item
     public float EnemySpeedPercentBonus;
     [Space]
     public ItemType ItemType;
+
+    public void Equip(InventoryManager c)
+    {
+
+    }
+    public void Unequip(InventoryManager c)
+    {
+
+    }
 }

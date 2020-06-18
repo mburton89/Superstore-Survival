@@ -7,8 +7,10 @@ public class InventoryInput : MonoBehaviour
 {
     [SerializeField] GameObject inventoryGameObject;
     [SerializeField] GameObject craftedItemsGameObject;
+    [SerializeField] GameObject craftingGameObject;
     [SerializeField] KeyCode[] toggleInventoryKeys;
     [SerializeField] KeyCode[] toggleCraftedItemKeys;
+    [SerializeField] KeyCode[] toggleCraftingKeys;
 
     public GameObject Player;
     
@@ -32,6 +34,7 @@ public class InventoryInput : MonoBehaviour
                 }
                 else
                 {
+                    craftingGameObject.SetActive(false);
                     HideCursor();
                 }
 
@@ -41,13 +44,31 @@ public class InventoryInput : MonoBehaviour
 
         for (int i = 0; i < toggleCraftedItemKeys.Length; i++)
         {
-            if (Input.GetKeyDown(toggleCraftedItemKeys[i]))
+            if (!craftedItemsGameObject.activeSelf && inventoryGameObject.activeSelf)
+            {
+                if (Input.GetKeyDown(toggleCraftedItemKeys[i]))
+                {
+                    craftingGameObject.SetActive(!craftingGameObject.activeSelf);
+                }
+            }
+            else
+            {
+                craftingGameObject.SetActive(false);
+            }
+
+            break;
+        }
+
+        for (int i = 0; i < toggleCraftingKeys.Length; i++)
+        {
+            if (Input.GetKeyDown(toggleCraftingKeys[i]))
             {
                 craftedItemsGameObject.SetActive(!craftedItemsGameObject.activeSelf);
 
                 if (craftedItemsGameObject.activeSelf)
                 {
                     inventoryGameObject.SetActive(false);
+                    craftingGameObject.SetActive(false);
                     ShowCursor();
                 }
                 else

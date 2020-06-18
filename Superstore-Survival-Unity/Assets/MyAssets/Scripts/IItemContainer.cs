@@ -1,5 +1,4 @@
-﻿
-public interface IItemContainer
+﻿public interface IItemContainer
 {
     int ItemCount(string itemID);
     Item RemoveItem(string itemID);
