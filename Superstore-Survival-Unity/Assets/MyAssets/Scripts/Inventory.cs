@@ -12,7 +12,6 @@ public class Inventory : MonoBehaviour, IItemContainer
     [SerializeField] Transform itemsParent;
     [SerializeField] ItemSlot[] itemSlots;
 
-    public event Action<Item> OnItemRightClickedEvent;
     public event Action<ItemSlot> OnPointerEnterEvent;
     public event Action<ItemSlot> OnPointerExitEvent;
     public event Action<ItemSlot> OnRightClickEvent;
