@@ -9,40 +9,10 @@ public class CraftingSystem : MonoBehaviour
     [SerializeField] Inventory inventory;
     [SerializeField] CraftingPanel craftingPanel;
     [SerializeField] Image craftedItemImage;
-    [SerializeField] CraftedPanel craftedPanel;
 
     private ItemSlot newItemSlot;
 
     public Button craftButton;
-
-    private void Awake()
-    {
-
-    }
-
-    private void Start()
-    {
-        Button btn = craftButton.GetComponent<Button>();
-        btn.onClick.AddListener(CheckSlots);
-    }
-
-    public void CheckCraftedItems()
-    {
-
-    }
-
-    public void CheckSlots(ItemSlot itemSlot1, ItemSlot itemSlot2)
-    {
-        if (itemSlot1 != null && itemSlot2 != null)
-        {
-            CraftItem();
-        }
-    }
-
-    public void CraftItem()
-    {
-
-    }
 
     // If crafted items menu is full, diasbled ability to open crafting screen
     // If crafted items menu is not full, enable ability to open crafting screen
