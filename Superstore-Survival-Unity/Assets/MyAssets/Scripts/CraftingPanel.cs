@@ -7,7 +7,7 @@ using UnityEngine.UIElements;
 public class CraftingPanel : MonoBehaviour
 {
     [SerializeField] Transform craftingSlotsParent;
-    [SerializeField] CraftingItemSlot[] craftingSlots;
+    public CraftingItemSlot[] craftingSlots;
 
     public event Action<ItemSlot> OnPointerEnterEvent;
     public event Action<ItemSlot> OnPointerExitEvent;

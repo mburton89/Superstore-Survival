@@ -53,4 +53,36 @@ public class CraftingSystem : MonoBehaviour
     //     - Toilet Paper + Toilet Paper = Toilet Paper Hoarder
     //     - Toilet Paper + Broken Hanger = Toilet Paper Launcher
     //     - Broken Hanger + Broken Hanger = Redneck Nunchucks
+
+    public void CraftItem()
+    {
+        if (craftingPanel.craftingSlots[0] == null || craftingPanel.craftingSlots[1] == null)
+        {
+            //TODO show user BOTH slots need to be filled
+            return; //won't execute rest of method
+        }
+
+        if (craftingPanel.craftingSlots[0].CurrentItemName == ItemName.Trash && craftingPanel.craftingSlots[1].CurrentItemName == ItemName.Trash)
+        {
+            //Destroy itemOne and itemTwo
+            //Create "Big Pile Of Trash" Item
+        }
+        else if (craftingPanel.craftingSlots[0].CurrentItemName == ItemName.Trash && craftingPanel.craftingSlots[1].CurrentItemName == ItemName.TheftedMerchandise)
+        {
+            //Destroy itemOne and itemTwo
+            //Create "Unsellable Merchandise" Item
+        }
+        else if (craftingPanel.craftingSlots[0].CurrentItemName == ItemName.TheftedMerchandise && craftingPanel.craftingSlots[1].CurrentItemName == ItemName.Trash)
+        {
+            //Destroy itemOne and itemTwo
+            //Create "Unsellable Merchandise" Item
+        }
+
+        //TODO create else-if's for all remainging permutations
+
+        else 
+        { 
+            //TODO Don't create new item and show user invalid permutation
+        }
+    }
 }

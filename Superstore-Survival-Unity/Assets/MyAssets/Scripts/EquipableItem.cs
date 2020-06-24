@@ -9,6 +9,17 @@ public enum ItemType
     Special
 }
 
+public enum ItemName
+{
+    Trash,
+    TheftedMerchandise,
+    BoxCutter,
+    Tape,
+    CheapBallpointPen,
+    ToiletPaper,
+    BrokenHanger
+}
+
 [CreateAssetMenu]
 public class EquipableItem : Item
 {
@@ -23,6 +34,7 @@ public class EquipableItem : Item
     public float EnemySpeedPercentBonus;
     [Space]
     public ItemType ItemType;
+    public ItemName CurrentItemName;
 
     public void Equip(InventoryManager c)
     {

@@ -2,6 +2,7 @@
 public class CraftingItemSlot : ItemSlot
 {
     public ItemType ItemType;
+    public ItemName CurrentItemName;
 
     protected override void OnValidate()
     {
