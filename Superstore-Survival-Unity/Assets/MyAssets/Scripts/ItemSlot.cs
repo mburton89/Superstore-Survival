@@ -98,6 +98,7 @@ public class ItemSlot : MonoBehaviour, IPointerClickHandler, IPointerEnterHandle
         if (OnDropEvent != null)
         {
             OnDropEvent(this);
+            Item.PrintDetails();
         }
     }
 
