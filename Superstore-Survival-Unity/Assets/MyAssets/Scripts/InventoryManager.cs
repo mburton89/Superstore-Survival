@@ -10,6 +10,8 @@ public class InventoryManager : MonoBehaviour
     [SerializeField] CraftingPanel craftingPanel;
     [SerializeField] ItemTooltip itemTooltip;
     [SerializeField] Image draggableItem;
+    [SerializeField] DropItemArea dropItemArea;
+    [SerializeField] QuestionDialog questionDialog;
 
     private ItemSlot draggedSlot;
 
@@ -45,6 +47,7 @@ public class InventoryManager : MonoBehaviour
         //Drop
         inventory.OnDropEvent += Drop;
         craftingPanel.OnDropEvent += Drop;
+        dropItemArea.OnDropEvent += DiscardItem;
     }
 
     private void Equip(ItemSlot itemSlot)
@@ -138,6 +141,24 @@ public class InventoryManager : MonoBehaviour
             draggedSlot.Item = dropItemSlot.Item;
             dropItemSlot.Item = draggedItem;
         }
+    }
+
+    private void DiscardItem()
+    {
+        if (draggedSlot == null)
+        {
+            return;
+        }
+
+        questionDialog.Show();
+        ItemSlot itemSlot = draggedSlot;
+        questionDialog.OnYesEvent += () => DestroyItemInSlot(itemSlot);
+    }
+
+    private void DestroyItemInSlot(ItemSlot itemSlot)
+    {
+        Destroy(itemSlot.Item);
+        itemSlot.Item = null;
     }
 
     public void Equip(EquipableItem item)

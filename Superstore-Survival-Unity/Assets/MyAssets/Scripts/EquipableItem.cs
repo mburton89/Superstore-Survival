@@ -9,6 +9,21 @@ public enum ItemType
     Special
 }
 
+<<<<<<< Updated upstream
+=======
+public enum ItemName
+{
+    Trash,
+    TheftedMerchandise,
+    BoxCutter,
+    Tape,
+    CheapBallpointPen,
+    ToiletPaper,
+    BrokenHanger,
+    PileOfTrash
+}
+
+>>>>>>> Stashed changes
 [CreateAssetMenu]
 public class EquipableItem : Item
 {

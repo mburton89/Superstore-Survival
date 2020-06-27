@@ -23,4 +23,5 @@ MonoBehaviour:
   TimePercentBonus: 0
   DetectionPercentBonus: 0
   EnemySpeedPercentBonus: 0
-  ItemType: 1
+  ItemType: 0
+  CurrentItemName: 0
