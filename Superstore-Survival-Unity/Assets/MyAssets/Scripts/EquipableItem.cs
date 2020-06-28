@@ -8,9 +8,6 @@ public enum ItemType
     Crafted,
     Special
 }
-
-<<<<<<< Updated upstream
-=======
 public enum ItemName
 {
     Trash,
@@ -23,7 +20,6 @@ public enum ItemName
     PileOfTrash
 }
 
->>>>>>> Stashed changes
 [CreateAssetMenu]
 public class EquipableItem : Item
 {

@@ -52,8 +52,7 @@ public class CraftingSystem : MonoBehaviour
     //     - Toilet Paper + Toilet Paper = Toilet Paper Hoarder
     //     - Toilet Paper + Broken Hanger = Toilet Paper Launcher
     //     - Broken Hanger + Broken Hanger = Redneck Nunchucks
-<<<<<<< Updated upstream
-=======
+
 
     private void OnEnable()
     {
@@ -88,12 +87,12 @@ public class CraftingSystem : MonoBehaviour
             //Create "Big Pile Of Trash" Item
             CraftedItemImage.GetComponent<Image>().sprite = PileOfTrash;
         }
-        else if (craftingPanel.craftingSlots[0].CurrentItemName == ItemName.Trash && craftingPanel.craftingSlots[1].CurrentItemName == ItemName.TheftedMerchandise)
+        else if (craftingPanel.craftingSlots[0].Item.ItemName == "Trash" && craftingPanel.craftingSlots[1].Item.ItemName == "TheftedMerchandise")
         {
             //Destroy itemOne and itemTwo
             //Create "Unsellable Merchandise" Item
         }
-        else if (craftingPanel.craftingSlots[0].CurrentItemName == ItemName.TheftedMerchandise && craftingPanel.craftingSlots[1].CurrentItemName == ItemName.Trash)
+        else if (craftingPanel.craftingSlots[0].Item.ItemName == "TheftedMerchandise" && craftingPanel.craftingSlots[1].Item.ItemName =="Trash")
         {
             //Destroy itemOne and itemTwo
             //Create "Unsellable Merchandise" Item
@@ -106,5 +105,4 @@ public class CraftingSystem : MonoBehaviour
             //TODO Don't create new item and show user invalid permutation
         }
     }
->>>>>>> Stashed changes
 }
