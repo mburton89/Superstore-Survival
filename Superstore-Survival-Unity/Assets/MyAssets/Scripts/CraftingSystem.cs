@@ -12,6 +12,7 @@ public class CraftingSystem : MonoBehaviour
     [SerializeField] Button craftButton;
 
     public Sprite PileOfTrash;
+    public Sprite UnsellableMerchandise;
 
     // If crafted items menu is full, diasbled ability to open crafting screen
     // If crafted items menu is not full, enable ability to open crafting screen
@@ -87,17 +88,18 @@ public class CraftingSystem : MonoBehaviour
             //Create "Big Pile Of Trash" Item
             CraftedItemImage.GetComponent<Image>().sprite = PileOfTrash;
         }
-        else if (craftingPanel.craftingSlots[0].Item.ItemName == "Trash" && craftingPanel.craftingSlots[1].Item.ItemName == "TheftedMerchandise")
-        {
-            //Destroy itemOne and itemTwo
-            //Create "Unsellable Merchandise" Item
-        }
-        else if (craftingPanel.craftingSlots[0].Item.ItemName == "TheftedMerchandise" && craftingPanel.craftingSlots[1].Item.ItemName =="Trash")
-        {
-            //Destroy itemOne and itemTwo
-            //Create "Unsellable Merchandise" Item
-        }
 
+        if (craftingPanel.craftingSlots[0].Item.ItemName == "Trash" && craftingPanel.craftingSlots[1].Item.ItemName == "Thefted Merchandise")
+        {
+            //Destroy itemOne and itemTwo
+            Destroy(craftingPanel.craftingSlots[0].Item);
+            Destroy(craftingPanel.craftingSlots[1].Item);
+            craftingPanel.craftingSlots[0].Item = null;
+            craftingPanel.craftingSlots[1].Item = null;
+            //Create "Unsellable Merchandise" Item
+            CraftedItemImage.GetComponent<Image>().sprite = UnsellableMerchandise;
+        }
+        
         //TODO create else-if's for all remainging permutations
 
         else 

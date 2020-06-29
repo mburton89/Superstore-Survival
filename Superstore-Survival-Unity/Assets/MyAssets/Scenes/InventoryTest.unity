@@ -1098,6 +1098,8 @@ MonoBehaviour:
   CraftedItemImage: {fileID: 1315759650}
   craftButton: {fileID: 1440783499}
   PileOfTrash: {fileID: 21300000, guid: b06d1a8c48714fb4898be82f4765356e, type: 3}
+  UnsellableMerchandise: {fileID: 21300000, guid: 1b5ec96a8274b4f4e9fe792f2f43026e,
+    type: 3}
 --- !u!1 &340328353
 GameObject:
   m_ObjectHideFlags: 0
@@ -2933,7 +2935,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   image: {fileID: 1053941408}
   ItemType: 0
-  CurrentItemName: 0
 --- !u!1 &1145194554
 GameObject:
   m_ObjectHideFlags: 0
@@ -3101,7 +3102,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   image: {fileID: 1252115752}
   ItemType: 0
-  CurrentItemName: 0
 --- !u!1 &1315759648
 GameObject:
   m_ObjectHideFlags: 0

@@ -1,0 +1,26 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 518c63bea50c5b94699dbae67a51a737, type: 3}
+  m_Name: SeverelyBrokenHanger
+  m_EditorClassIdentifier: 
+  id: 9ec19cc48dc1c8b4ba38003c2e17f21f
+  ItemName: Severely Broken Hanger
+  Icon: {fileID: 21300000, guid: 5807bf3cb2fb35248929fe0dfd6cf7e3, type: 3}
+  SpeedBonus: 0
+  TimeBonus: 0
+  DetectionBonnus: 0
+  EnemySpeedBonus: 0
+  SpeedPercentBonus: 0
+  TimePercentBonus: 0
+  DetectionPercentBonus: 0
+  EnemySpeedPercentBonus: 0
+  ItemType: 0
