@@ -1100,6 +1100,35 @@ MonoBehaviour:
   PileOfTrash: {fileID: 21300000, guid: b06d1a8c48714fb4898be82f4765356e, type: 3}
   UnsellableMerchandise: {fileID: 21300000, guid: 1b5ec96a8274b4f4e9fe792f2f43026e,
     type: 3}
+  TrashConfetti: {fileID: 21300000, guid: cd063341d036bce44badd60eb57583b4, type: 3}
+  TrashGrenade: {fileID: 21300000, guid: cd6661cd54fd15f42b2ac04920f18fc0, type: 3}
+  StankyPen: {fileID: 21300000, guid: 98b0f98a59ef48d4ebb4868f4aaff272, type: 3}
+  SoiledToiletPaper: {fileID: 21300000, guid: 630c4abec705cf04591e2f69c89eca05, type: 3}
+  CompleteTrash: {fileID: 21300000, guid: 3d68b9fa8afec504da7fbc95de4aaaa5, type: 3}
+  SuspiciousActivity: {fileID: 21300000, guid: 2d9de089f03a97344b67af5f34044380, type: 3}
+  IncriminatingFootage: {fileID: 21300000, guid: a36d8dc055e0aaf418ecab6ddd96fa54,
+    type: 3}
+  EmployeeMonth: {fileID: 21300000, guid: a2f5ed9d44ab36540be17353d3ee501a, type: 3}
+  RecordedLoss: {fileID: 21300000, guid: 0aa6f4d09185cfe4a9fa30b2f55d719a, type: 3}
+  PutridBox: {fileID: 21300000, guid: 2127732896dc17f48a0640afb9722e3b, type: 3}
+  AbsurdConcoction: {fileID: 21300000, guid: fe477709ce149524baec72fe0f419d02, type: 3}
+  EmosParadise: {fileID: 21300000, guid: 7c5036d3a7a481d4598a419eb159bd7d, type: 3}
+  TapeStrips: {fileID: 21300000, guid: 840190d615d438c4188b9910ca42dc7a, type: 3}
+  InkyMess: {fileID: 21300000, guid: 1d5a4247b3d2e0f43a629d7177265733, type: 3}
+  ToiletPaperShreds: {fileID: 21300000, guid: 61877a1dcb31f7c44b2ad5b9a546d07b, type: 3}
+  SeverelyBrokenHanger: {fileID: 21300000, guid: 5807bf3cb2fb35248929fe0dfd6cf7e3,
+    type: 3}
+  TapeBall: {fileID: 21300000, guid: ff26e30468d6c2f4a8c5ce830150d979, type: 3}
+  YoyoPen: {fileID: 21300000, guid: 5d73dbe25cebeb947868d0143aa205b4, type: 3}
+  ToiletPaperBomb: {fileID: 21300000, guid: 2d3b2080763090b43ad9dd28b51585f6, type: 3}
+  FunctionalHanger: {fileID: 21300000, guid: ef3848e810c6b864fafa8bf86d84ea85, type: 3}
+  PenMissle: {fileID: 21300000, guid: a059d645d01617145af01e9fd17a1f98, type: 3}
+  CryForHelp: {fileID: 21300000, guid: 2b7a743c8308daa43a8ce39aff69994b, type: 3}
+  HangerFrisbee: {fileID: 21300000, guid: 78873db48d7747343afece106d457d5d, type: 3}
+  ToiletPaperHoarder: {fileID: 21300000, guid: 1007cf09573d513478843c0504178c31, type: 3}
+  ToiletPaperLauncher: {fileID: 21300000, guid: 8e102882ad9ee2b4db3b45587cbc6cfb,
+    type: 3}
+  RedneckNunchucks: {fileID: 21300000, guid: 373da5b02697a014383c3490f5f6b0b2, type: 3}
 --- !u!1 &340328353
 GameObject:
   m_ObjectHideFlags: 0
