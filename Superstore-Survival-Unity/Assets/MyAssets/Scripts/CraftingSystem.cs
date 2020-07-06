@@ -6,14 +6,46 @@ using UnityEngine.UI;
 
 public class CraftingSystem : MonoBehaviour
 {
-    [SerializeField] Inventory inventory;
+    [SerializeField] Inventory craftedPanel;
     [SerializeField] CraftingPanel craftingPanel;
     [SerializeField] Image CraftedItemImage;
     [SerializeField] Button craftButton;
     [SerializeField] Item item;
 
+    [SerializeField] Item pileOfTrash;
+    [SerializeField] Item unsellableMerchandise;
+    [SerializeField] Item trashConfetti;
+    [SerializeField] Item trashGrenade;
+    [SerializeField] Item stankyPen;
+    [SerializeField] Item soiledToiletPaper;
+    [SerializeField] Item completeTrash;
+    [SerializeField] Item suspiciousActivity;
+    [SerializeField] Item incriminatingFootage;
+    [SerializeField] Item employeeMonth;
+    [SerializeField] Item recordedLoss;
+    [SerializeField] Item putridBox;
+    [SerializeField] Item absurdConcoction;
+    [SerializeField] Item emosParadise;
+    [SerializeField] Item tapeStrips;
+    [SerializeField] Item inkyMess;
+    [SerializeField] Item toiletPaperShreds;
+    [SerializeField] Item severelyBrokenHanger;
+    [SerializeField] Item tapeBall;
+    [SerializeField] Item yoyoPen;
+    [SerializeField] Item toiletPaperBomb;
+    [SerializeField] Item functionalHanger;
+    [SerializeField] Item penMissle;
+    [SerializeField] Item cryForHelp;
+    [SerializeField] Item hangerFrisbee;
+    [SerializeField] Item toiletPaperHoarder;
+    [SerializeField] Item toiletPaperLauncher;
+    [SerializeField] Item redneckNunchucks;
+
     public float timeRemaining = 2;
     public bool timerIsRunning = false;
+
+    public GameObject notEnoughItems;
+    public GameObject inventoryFull;
 
     public Sprite PileOfTrash;
     public Sprite UnsellableMerchandise;
@@ -47,43 +79,6 @@ public class CraftingSystem : MonoBehaviour
     // If crafted items menu is full, diasbled ability to open crafting screen
     // If crafted items menu is not full, enable ability to open crafting screen
 
-    // When CRAFT button is clicked:
-    //     - Is crafting screen item slot 1 & item slot 2 both occupied?
-    //         - No:  Do nothing.
-    //         - Yes: Destroy item in slot 1 & slot 2 and add new item to crafted item slot.
-    //                Wait 5 seconds then add crafted item to crafted item UI and remove from
-    //                crafted item slot in crafting screen.
-
-    // Crafted item Recipes Are:
-    //     - Trash + Trash = Big Pile Of Trash
-    //     - Trash + Thefted Merchandise = Unsellable Merchandise
-    //     - Trash + Box Cutter = Trash Confetti
-    //     - Trash + Tape = Trash Grenade
-    //     - Trash + Cheap Ballpoint Pen = Stanky Pen
-    //     - Trash + Toilet Paper = Soiled Toilet Paper
-    //     - Trash + Broken Hanger = Complete Trash
-    //     - Thefted Merchandise + Thefted Merchandise = Suspicious Activity
-    //     - Thefted Merchandise + Box Cutter = Incriminating Footage
-    //     - Thefted Merchandise + Tape = Employee of the Month
-    //     - Thefted Merchandise + Cheap Ballpoint Pen = Recorded Loss
-    //     - Thefted Merchandise + Toilet Paper = Putrid Box
-    //     - Thefted Merchandise + Broken Hanger = Absurd Concoction
-    //     - Box Cutter + Box Cutter = Emo's Paradise
-    //     - Box Cutter + Tape = Tape Strips
-    //     - Box Cutter + Cheap Ballpoint Pen = Nasty Inky Mess
-    //     - Box Cutter + Toilet Paper = Toilet Paper Shreds
-    //     - Box Cutter + Broken Hanger = Severely Broken Hanger
-    //     - Tape + Tape = Tape Ball
-    //     - Tape + Cheap Ballpoint Pen = Yo-Yo Pen
-    //     - Tape + Toilet Paper = Toilet Paper Bomb
-    //     - Tape + Broken Hanger = Fully Functional Hanger
-    //     - Cheap Ballpoint Pen + Cheap Ballpoint Pen = Pen Missle
-    //     - Cheap Ballpoint Pen + Toilet Paper = Cry For Help
-    //     - Cheap Ballpoint Pen + Broken Hanger = Hanger Frisbee
-    //     - Toilet Paper + Toilet Paper = Toilet Paper Hoarder
-    //     - Toilet Paper + Broken Hanger = Toilet Paper Launcher
-    //     - Broken Hanger + Broken Hanger = Redneck Nunchucks
-
     void Update()
     {
         if (timerIsRunning)
@@ -97,6 +92,8 @@ public class CraftingSystem : MonoBehaviour
                 timeRemaining = 0;
                 timerIsRunning = false;
                 CraftedItemImage.GetComponent<Image>().sprite = null;
+                notEnoughItems.SetActive(false);
+                inventoryFull.SetActive(false);
                 timeRemaining = 2;
             }
         }
@@ -114,7 +111,15 @@ public class CraftingSystem : MonoBehaviour
 
     void HandleCraftPressed()
     {
-        CraftItem();
+        if (craftedPanel.IsFull() == true)
+        {
+            inventoryFull.SetActive(true);
+            Countdown();
+        }
+        else
+        {
+            CraftItem();
+        }
     }
 
     private void Countdown()
@@ -124,9 +129,11 @@ public class CraftingSystem : MonoBehaviour
 
     public void CraftItem()
     {
-        if (craftingPanel.craftingSlots[0] == null || craftingPanel.craftingSlots[1] == null)
+        if (craftingPanel.craftingSlots[0].Item == null || craftingPanel.craftingSlots[1].Item == null)
         {
-            //TODO show user BOTH slots need to be filled
+            //Show user BOTH slots need to be filled
+            notEnoughItems.SetActive(true);
+            Countdown();
             return; //won't execute rest of method
         }
 
@@ -141,6 +148,8 @@ public class CraftingSystem : MonoBehaviour
             //Create "Big Pile Of Trash" Item
             CraftedItemImage.GetComponent<Image>().sprite = PileOfTrash;
             Countdown();
+            craftedPanel.AddItem(pileOfTrash);
+            return;
         }
 
         // Unsellable Merchandise
@@ -155,6 +164,8 @@ public class CraftingSystem : MonoBehaviour
             //Create "Unsellable Merchandise" Item
             CraftedItemImage.GetComponent<Image>().sprite = UnsellableMerchandise;
             Countdown();
+            craftedPanel.AddItem(unsellableMerchandise);
+            return;
         }
 
         // Tash Confetti
@@ -169,6 +180,8 @@ public class CraftingSystem : MonoBehaviour
             //Create "Unsellable Merchandise" Item
             CraftedItemImage.GetComponent<Image>().sprite = TrashConfetti;
             Countdown();
+            craftedPanel.AddItem(trashConfetti);
+            return;
         }
 
         // Trash Grenade
@@ -183,6 +196,8 @@ public class CraftingSystem : MonoBehaviour
             //Create "Unsellable Merchandise" Item
             CraftedItemImage.GetComponent<Image>().sprite = TrashGrenade;
             Countdown();
+            craftedPanel.AddItem(trashGrenade);
+            return;
         }
 
         // Stanky Pen
@@ -197,6 +212,8 @@ public class CraftingSystem : MonoBehaviour
             //Create "Unsellable Merchandise" Item
             CraftedItemImage.GetComponent<Image>().sprite = StankyPen;
             Countdown();
+            craftedPanel.AddItem(stankyPen);
+            return;
         }
 
         // Soiled Toilet Paper
@@ -211,6 +228,8 @@ public class CraftingSystem : MonoBehaviour
             //Create "Unsellable Merchandise" Item
             CraftedItemImage.GetComponent<Image>().sprite = SoiledToiletPaper;
             Countdown();
+            craftedPanel.AddItem(soiledToiletPaper);
+            return;
         }
 
         // Complete Trash
@@ -225,6 +244,8 @@ public class CraftingSystem : MonoBehaviour
             //Create "Unsellable Merchandise" Item
             CraftedItemImage.GetComponent<Image>().sprite = CompleteTrash;
             Countdown();
+            craftedPanel.AddItem(completeTrash);
+            return;
         }
 
         // Suspicious Activity
@@ -238,6 +259,8 @@ public class CraftingSystem : MonoBehaviour
             //Create "Unsellable Merchandise" Item
             CraftedItemImage.GetComponent<Image>().sprite = SuspiciousActivity;
             Countdown();
+            craftedPanel.AddItem(suspiciousActivity);
+            return;
         }
 
         // Incriminating Footage
@@ -252,6 +275,8 @@ public class CraftingSystem : MonoBehaviour
             //Create "Unsellable Merchandise" Item
             CraftedItemImage.GetComponent<Image>().sprite = IncriminatingFootage;
             Countdown();
+            craftedPanel.AddItem(incriminatingFootage);
+            return;
         }
 
         // Employee of the Month
@@ -266,6 +291,8 @@ public class CraftingSystem : MonoBehaviour
             //Create "Unsellable Merchandise" Item
             CraftedItemImage.GetComponent<Image>().sprite = EmployeeMonth;
             Countdown();
+            craftedPanel.AddItem(employeeMonth);
+            return;
         }
 
         // Recorded Loss
@@ -280,6 +307,8 @@ public class CraftingSystem : MonoBehaviour
             //Create "Unsellable Merchandise" Item
             CraftedItemImage.GetComponent<Image>().sprite = RecordedLoss;
             Countdown();
+            craftedPanel.AddItem(recordedLoss);
+            return;
         }
 
         // Putrid Box
@@ -294,6 +323,8 @@ public class CraftingSystem : MonoBehaviour
             //Create "Unsellable Merchandise" Item
             CraftedItemImage.GetComponent<Image>().sprite = PutridBox;
             Countdown();
+            craftedPanel.AddItem(putridBox);
+            return;
         }
 
         // Absurd Concoction
@@ -308,6 +339,8 @@ public class CraftingSystem : MonoBehaviour
             //Create "Unsellable Merchandise" Item
             CraftedItemImage.GetComponent<Image>().sprite = AbsurdConcoction;
             Countdown();
+            craftedPanel.AddItem(absurdConcoction);
+            return;
         }
 
         // Emo's Paradise
@@ -321,6 +354,8 @@ public class CraftingSystem : MonoBehaviour
             //Create "Unsellable Merchandise" Item
             CraftedItemImage.GetComponent<Image>().sprite = EmosParadise;
             Countdown();
+            craftedPanel.AddItem(emosParadise);
+            return;
         }
 
         // Tape Strips
@@ -335,6 +370,8 @@ public class CraftingSystem : MonoBehaviour
             //Create "Unsellable Merchandise" Item
             CraftedItemImage.GetComponent<Image>().sprite = TapeStrips;
             Countdown();
+            craftedPanel.AddItem(tapeStrips);
+            return;
         }
 
         // Nasty Inky Mess
@@ -349,6 +386,8 @@ public class CraftingSystem : MonoBehaviour
             //Create "Unsellable Merchandise" Item
             CraftedItemImage.GetComponent<Image>().sprite = InkyMess;
             Countdown();
+            craftedPanel.AddItem(inkyMess);
+            return;
         }
 
         // Toilet Paper Shreds
@@ -363,6 +402,8 @@ public class CraftingSystem : MonoBehaviour
             //Create "Unsellable Merchandise" Item
             CraftedItemImage.GetComponent<Image>().sprite = ToiletPaperShreds;
             Countdown();
+            craftedPanel.AddItem(toiletPaperShreds);
+            return;
         }
 
         // Severely Broken Hanger
@@ -377,6 +418,8 @@ public class CraftingSystem : MonoBehaviour
             //Create "Unsellable Merchandise" Item
             CraftedItemImage.GetComponent<Image>().sprite = SeverelyBrokenHanger;
             Countdown();
+            craftedPanel.AddItem(severelyBrokenHanger);
+            return;
         }
 
         // Tape Ball
@@ -390,6 +433,8 @@ public class CraftingSystem : MonoBehaviour
             //Create "Unsellable Merchandise" Item
             CraftedItemImage.GetComponent<Image>().sprite = TapeBall;
             Countdown();
+            craftedPanel.AddItem(tapeBall);
+            return;
         }
 
         // Yo-Yo Pen
@@ -404,6 +449,8 @@ public class CraftingSystem : MonoBehaviour
             //Create "Unsellable Merchandise" Item
             CraftedItemImage.GetComponent<Image>().sprite = YoyoPen;
             Countdown();
+            craftedPanel.AddItem(yoyoPen);
+            return;
         }
 
         // Toilet Paper Bomb
@@ -418,6 +465,8 @@ public class CraftingSystem : MonoBehaviour
             //Create "Unsellable Merchandise" Item
             CraftedItemImage.GetComponent<Image>().sprite = ToiletPaperBomb;
             Countdown();
+            craftedPanel.AddItem(toiletPaperBomb);
+            return;
         }
 
         // Fully Functional Hanger
@@ -432,6 +481,8 @@ public class CraftingSystem : MonoBehaviour
             //Create "Unsellable Merchandise" Item
             CraftedItemImage.GetComponent<Image>().sprite = FunctionalHanger;
             Countdown();
+            craftedPanel.AddItem(functionalHanger);
+            return;
         }
 
         // Pen Missle
@@ -445,6 +496,8 @@ public class CraftingSystem : MonoBehaviour
             //Create "Unsellable Merchandise" Item
             CraftedItemImage.GetComponent<Image>().sprite = PenMissle;
             Countdown();
+            craftedPanel.AddItem(penMissle);
+            return;
         }
 
         // Cry For Help
@@ -459,6 +512,8 @@ public class CraftingSystem : MonoBehaviour
             //Create "Unsellable Merchandise" Item
             CraftedItemImage.GetComponent<Image>().sprite = CryForHelp;
             Countdown();
+            craftedPanel.AddItem(cryForHelp);
+            return;
         }
 
         // Hanger Frisbee
@@ -473,6 +528,8 @@ public class CraftingSystem : MonoBehaviour
             //Create "Unsellable Merchandise" Item
             CraftedItemImage.GetComponent<Image>().sprite = HangerFrisbee;
             Countdown();
+            craftedPanel.AddItem(hangerFrisbee);
+            return;
         }
 
         // Toilet Paper Hoarder
@@ -486,6 +543,8 @@ public class CraftingSystem : MonoBehaviour
             //Create "Unsellable Merchandise" Item
             CraftedItemImage.GetComponent<Image>().sprite = ToiletPaperHoarder;
             Countdown();
+            craftedPanel.AddItem(toiletPaperHoarder);
+            return;
         }
 
         // Toilet Paper Launcher
@@ -500,6 +559,8 @@ public class CraftingSystem : MonoBehaviour
             //Create "Unsellable Merchandise" Item
             CraftedItemImage.GetComponent<Image>().sprite = ToiletPaperLauncher;
             Countdown();
+            craftedPanel.AddItem(toiletPaperLauncher);
+            return;
         }
 
         // Redneck Nunchucks
@@ -513,11 +574,8 @@ public class CraftingSystem : MonoBehaviour
             //Create "Unsellable Merchandise" Item
             CraftedItemImage.GetComponent<Image>().sprite = RedneckNunchucks;
             Countdown();
-        }
-
-        else
-        { 
-            //TODO Don't create new item and show user invalid permutation
+            craftedPanel.AddItem(redneckNunchucks);
+            return;
         }
     }
 }

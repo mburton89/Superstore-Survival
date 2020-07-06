@@ -8,6 +8,7 @@ public class InventoryManager : MonoBehaviour
 {
     [SerializeField] Inventory inventory;
     [SerializeField] CraftingPanel craftingPanel;
+    [SerializeField] Inventory craftedPanel;
     [SerializeField] ItemTooltip itemTooltip;
     [SerializeField] Image draggableItem;
     [SerializeField] DropItemArea dropItemArea;
@@ -29,24 +30,31 @@ public class InventoryManager : MonoBehaviour
         //Right Click
         inventory.OnRightClickEvent += Equip;
         craftingPanel.OnRightClickEvent += Unequip;
+        craftedPanel.OnRightClickEvent += Equip;
         //Pointer Enter
         inventory.OnPointerEnterEvent += ShowTooltip;
         craftingPanel.OnPointerEnterEvent += ShowTooltip;
+        craftedPanel.OnPointerEnterEvent += ShowTooltip;
         //Pointer Exit
         inventory.OnPointerExitEvent += HideTooltip;
         craftingPanel.OnPointerExitEvent += HideTooltip;
+        craftedPanel.OnPointerExitEvent += HideTooltip;
         //Begin Drag
         inventory.OnBeginDragEvent += BeginDrag;
         craftingPanel.OnBeginDragEvent += BeginDrag;
+        craftedPanel.OnBeginDragEvent += BeginDrag;
         //End Drag
         inventory.OnEndDragEvent += EndDrag;
         craftingPanel.OnEndDragEvent += EndDrag;
+        craftedPanel.OnEndDragEvent += EndDrag;
         //Drag
         inventory.OnDragEvent += Drag;
         craftingPanel.OnDragEvent += Drag;
+        craftedPanel.OnDragEvent += Drag;
         //Drop
         inventory.OnDropEvent += Drop;
         craftingPanel.OnDropEvent += Drop;
+        craftedPanel.OnDropEvent += Drop;
         dropItemArea.OnDropEvent += DiscardItem;
     }
 
