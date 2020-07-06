@@ -668,7 +668,6 @@ GameObject:
   - component: {fileID: 267633622}
   - component: {fileID: 267633624}
   - component: {fileID: 267633623}
-  - component: {fileID: 267633625}
   m_Layer: 5
   m_Name: Crafted Panel
   m_TagString: Untagged
@@ -734,18 +733,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 267633621}
   m_CullTransparentMesh: 0
---- !u!114 &267633625
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 267633621}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: af2864d6b61da2c44adfcdaf7879107b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &298754960
 GameObject:
   m_ObjectHideFlags: 0
@@ -1097,6 +1084,9 @@ MonoBehaviour:
   craftingPanel: {fileID: 306631989}
   CraftedItemImage: {fileID: 1315759650}
   craftButton: {fileID: 1440783499}
+  item: {fileID: 0}
+  timeRemaining: 2
+  timerIsRunning: 0
   PileOfTrash: {fileID: 21300000, guid: b06d1a8c48714fb4898be82f4765356e, type: 3}
   UnsellableMerchandise: {fileID: 21300000, guid: 1b5ec96a8274b4f4e9fe792f2f43026e,
     type: 3}
