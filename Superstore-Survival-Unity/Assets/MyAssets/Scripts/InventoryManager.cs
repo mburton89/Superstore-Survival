@@ -10,6 +10,7 @@ public class InventoryManager : MonoBehaviour
     [SerializeField] CraftingPanel craftingPanel;
     [SerializeField] Inventory craftedPanel;
     [SerializeField] ItemTooltip itemTooltip;
+    [SerializeField] ItemTooltip craftedTooltip;
     [SerializeField] Image draggableItem;
     [SerializeField] DropItemArea dropItemArea;
     [SerializeField] QuestionDialog questionDialog;
@@ -28,9 +29,9 @@ public class InventoryManager : MonoBehaviour
     {
         //Setup Events
         //Right Click
-        inventory.OnRightClickEvent += Equip;
-        craftingPanel.OnRightClickEvent += Unequip;
-        craftedPanel.OnRightClickEvent += Equip;
+        inventory.OnRightClickEvent += InventoryRightClick;
+        craftingPanel.OnRightClickEvent += CraftingPanelRightClick;
+        craftedPanel.OnRightClickEvent += InventoryRightClick;
         //Pointer Enter
         inventory.OnPointerEnterEvent += ShowTooltip;
         craftingPanel.OnPointerEnterEvent += ShowTooltip;
@@ -58,7 +59,7 @@ public class InventoryManager : MonoBehaviour
         dropItemArea.OnDropEvent += DiscardItem;
     }
 
-    private void Equip(ItemSlot itemSlot)
+    private void InventoryRightClick(ItemSlot itemSlot)
     {
         EquipableItem equipableItem = itemSlot.Item as EquipableItem;
         if (equipableItem != null)
@@ -67,7 +68,7 @@ public class InventoryManager : MonoBehaviour
         }
     }
 
-    private void Unequip(ItemSlot itemSlot)
+    private void CraftingPanelRightClick(ItemSlot itemSlot)
     {
         EquipableItem equipableItem = itemSlot.Item as EquipableItem;
         if (equipableItem != null)
@@ -82,12 +83,14 @@ public class InventoryManager : MonoBehaviour
         if (equipableItem != null)
         {
             itemTooltip.ShowTooltip(equipableItem);
+            craftedTooltip.ShowTooltip(equipableItem);
         }
     }
 
     private void HideTooltip(ItemSlot itemSlot)
     {
         itemTooltip.HideTooltip();
+        craftedTooltip.HideTooltip();
     }
 
     private void BeginDrag(ItemSlot itemSlot)

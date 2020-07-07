@@ -41,11 +41,12 @@ public class CraftingSystem : MonoBehaviour
     [SerializeField] Item toiletPaperLauncher;
     [SerializeField] Item redneckNunchucks;
 
-    public float timeRemaining = 2;
+    public float timeRemaining = 3;
     public bool timerIsRunning = false;
 
     public GameObject notEnoughItems;
     public GameObject inventoryFull;
+    public Text newItemName;
 
     public Sprite PileOfTrash;
     public Sprite UnsellableMerchandise;
@@ -94,7 +95,8 @@ public class CraftingSystem : MonoBehaviour
                 CraftedItemImage.GetComponent<Image>().sprite = null;
                 notEnoughItems.SetActive(false);
                 inventoryFull.SetActive(false);
-                timeRemaining = 2;
+                newItemName.text = " ";
+                timeRemaining = 3;
             }
         }
     }
@@ -146,6 +148,7 @@ public class CraftingSystem : MonoBehaviour
             craftingPanel.craftingSlots[0].Item = null;
             craftingPanel.craftingSlots[1].Item = null;
             //Create "Big Pile Of Trash" Item
+            newItemName.text = "Big Pile Of Trash";
             CraftedItemImage.GetComponent<Image>().sprite = PileOfTrash;
             Countdown();
             craftedPanel.AddItem(pileOfTrash);
@@ -162,6 +165,7 @@ public class CraftingSystem : MonoBehaviour
             craftingPanel.craftingSlots[0].Item = null;
             craftingPanel.craftingSlots[1].Item = null;
             //Create "Unsellable Merchandise" Item
+            newItemName.text = "Unsellable Merchandise";
             CraftedItemImage.GetComponent<Image>().sprite = UnsellableMerchandise;
             Countdown();
             craftedPanel.AddItem(unsellableMerchandise);
@@ -178,6 +182,7 @@ public class CraftingSystem : MonoBehaviour
             craftingPanel.craftingSlots[0].Item = null;
             craftingPanel.craftingSlots[1].Item = null;
             //Create "Unsellable Merchandise" Item
+            newItemName.text = "Trash Confetti";
             CraftedItemImage.GetComponent<Image>().sprite = TrashConfetti;
             Countdown();
             craftedPanel.AddItem(trashConfetti);
@@ -194,6 +199,7 @@ public class CraftingSystem : MonoBehaviour
             craftingPanel.craftingSlots[0].Item = null;
             craftingPanel.craftingSlots[1].Item = null;
             //Create "Unsellable Merchandise" Item
+            newItemName.text = "Trash Grenade";
             CraftedItemImage.GetComponent<Image>().sprite = TrashGrenade;
             Countdown();
             craftedPanel.AddItem(trashGrenade);
@@ -210,6 +216,7 @@ public class CraftingSystem : MonoBehaviour
             craftingPanel.craftingSlots[0].Item = null;
             craftingPanel.craftingSlots[1].Item = null;
             //Create "Unsellable Merchandise" Item
+            newItemName.text = "Stanky Pen";
             CraftedItemImage.GetComponent<Image>().sprite = StankyPen;
             Countdown();
             craftedPanel.AddItem(stankyPen);
@@ -226,6 +233,7 @@ public class CraftingSystem : MonoBehaviour
             craftingPanel.craftingSlots[0].Item = null;
             craftingPanel.craftingSlots[1].Item = null;
             //Create "Unsellable Merchandise" Item
+            newItemName.text = "Soiled Toilet Paper";
             CraftedItemImage.GetComponent<Image>().sprite = SoiledToiletPaper;
             Countdown();
             craftedPanel.AddItem(soiledToiletPaper);
@@ -242,6 +250,7 @@ public class CraftingSystem : MonoBehaviour
             craftingPanel.craftingSlots[0].Item = null;
             craftingPanel.craftingSlots[1].Item = null;
             //Create "Unsellable Merchandise" Item
+            newItemName.text = "Complete Trash";
             CraftedItemImage.GetComponent<Image>().sprite = CompleteTrash;
             Countdown();
             craftedPanel.AddItem(completeTrash);
@@ -257,6 +266,7 @@ public class CraftingSystem : MonoBehaviour
             craftingPanel.craftingSlots[0].Item = null;
             craftingPanel.craftingSlots[1].Item = null;
             //Create "Unsellable Merchandise" Item
+            newItemName.text = "Suspicious Activity";
             CraftedItemImage.GetComponent<Image>().sprite = SuspiciousActivity;
             Countdown();
             craftedPanel.AddItem(suspiciousActivity);
@@ -273,6 +283,7 @@ public class CraftingSystem : MonoBehaviour
             craftingPanel.craftingSlots[0].Item = null;
             craftingPanel.craftingSlots[1].Item = null;
             //Create "Unsellable Merchandise" Item
+            newItemName.text = "Incriminating Footage";
             CraftedItemImage.GetComponent<Image>().sprite = IncriminatingFootage;
             Countdown();
             craftedPanel.AddItem(incriminatingFootage);
@@ -289,6 +300,7 @@ public class CraftingSystem : MonoBehaviour
             craftingPanel.craftingSlots[0].Item = null;
             craftingPanel.craftingSlots[1].Item = null;
             //Create "Unsellable Merchandise" Item
+            newItemName.text = "Employee Of The Month";
             CraftedItemImage.GetComponent<Image>().sprite = EmployeeMonth;
             Countdown();
             craftedPanel.AddItem(employeeMonth);
@@ -305,6 +317,7 @@ public class CraftingSystem : MonoBehaviour
             craftingPanel.craftingSlots[0].Item = null;
             craftingPanel.craftingSlots[1].Item = null;
             //Create "Unsellable Merchandise" Item
+            newItemName.text = "Recorded Loss";
             CraftedItemImage.GetComponent<Image>().sprite = RecordedLoss;
             Countdown();
             craftedPanel.AddItem(recordedLoss);
@@ -321,6 +334,7 @@ public class CraftingSystem : MonoBehaviour
             craftingPanel.craftingSlots[0].Item = null;
             craftingPanel.craftingSlots[1].Item = null;
             //Create "Unsellable Merchandise" Item
+            newItemName.text = "Putrid Box";
             CraftedItemImage.GetComponent<Image>().sprite = PutridBox;
             Countdown();
             craftedPanel.AddItem(putridBox);
@@ -337,6 +351,7 @@ public class CraftingSystem : MonoBehaviour
             craftingPanel.craftingSlots[0].Item = null;
             craftingPanel.craftingSlots[1].Item = null;
             //Create "Unsellable Merchandise" Item
+            newItemName.text = "Absurd Concoction";
             CraftedItemImage.GetComponent<Image>().sprite = AbsurdConcoction;
             Countdown();
             craftedPanel.AddItem(absurdConcoction);
@@ -352,6 +367,7 @@ public class CraftingSystem : MonoBehaviour
             craftingPanel.craftingSlots[0].Item = null;
             craftingPanel.craftingSlots[1].Item = null;
             //Create "Unsellable Merchandise" Item
+            newItemName.text = "Emo's Paradise";
             CraftedItemImage.GetComponent<Image>().sprite = EmosParadise;
             Countdown();
             craftedPanel.AddItem(emosParadise);
@@ -368,6 +384,7 @@ public class CraftingSystem : MonoBehaviour
             craftingPanel.craftingSlots[0].Item = null;
             craftingPanel.craftingSlots[1].Item = null;
             //Create "Unsellable Merchandise" Item
+            newItemName.text = "Tape Strips";
             CraftedItemImage.GetComponent<Image>().sprite = TapeStrips;
             Countdown();
             craftedPanel.AddItem(tapeStrips);
@@ -384,6 +401,7 @@ public class CraftingSystem : MonoBehaviour
             craftingPanel.craftingSlots[0].Item = null;
             craftingPanel.craftingSlots[1].Item = null;
             //Create "Unsellable Merchandise" Item
+            newItemName.text = "Nasty Inky Mess";
             CraftedItemImage.GetComponent<Image>().sprite = InkyMess;
             Countdown();
             craftedPanel.AddItem(inkyMess);
@@ -400,6 +418,7 @@ public class CraftingSystem : MonoBehaviour
             craftingPanel.craftingSlots[0].Item = null;
             craftingPanel.craftingSlots[1].Item = null;
             //Create "Unsellable Merchandise" Item
+            newItemName.text = "Toilet Paper Shreds";
             CraftedItemImage.GetComponent<Image>().sprite = ToiletPaperShreds;
             Countdown();
             craftedPanel.AddItem(toiletPaperShreds);
@@ -416,6 +435,7 @@ public class CraftingSystem : MonoBehaviour
             craftingPanel.craftingSlots[0].Item = null;
             craftingPanel.craftingSlots[1].Item = null;
             //Create "Unsellable Merchandise" Item
+            newItemName.text = "Severely Broken Hanger";
             CraftedItemImage.GetComponent<Image>().sprite = SeverelyBrokenHanger;
             Countdown();
             craftedPanel.AddItem(severelyBrokenHanger);
@@ -431,6 +451,7 @@ public class CraftingSystem : MonoBehaviour
             craftingPanel.craftingSlots[0].Item = null;
             craftingPanel.craftingSlots[1].Item = null;
             //Create "Unsellable Merchandise" Item
+            newItemName.text = "Tape Ball";
             CraftedItemImage.GetComponent<Image>().sprite = TapeBall;
             Countdown();
             craftedPanel.AddItem(tapeBall);
@@ -447,6 +468,7 @@ public class CraftingSystem : MonoBehaviour
             craftingPanel.craftingSlots[0].Item = null;
             craftingPanel.craftingSlots[1].Item = null;
             //Create "Unsellable Merchandise" Item
+            newItemName.text = "Yo-Yo Pen";
             CraftedItemImage.GetComponent<Image>().sprite = YoyoPen;
             Countdown();
             craftedPanel.AddItem(yoyoPen);
@@ -463,6 +485,7 @@ public class CraftingSystem : MonoBehaviour
             craftingPanel.craftingSlots[0].Item = null;
             craftingPanel.craftingSlots[1].Item = null;
             //Create "Unsellable Merchandise" Item
+            newItemName.text = "Toilet Paper Bomb";
             CraftedItemImage.GetComponent<Image>().sprite = ToiletPaperBomb;
             Countdown();
             craftedPanel.AddItem(toiletPaperBomb);
@@ -479,6 +502,7 @@ public class CraftingSystem : MonoBehaviour
             craftingPanel.craftingSlots[0].Item = null;
             craftingPanel.craftingSlots[1].Item = null;
             //Create "Unsellable Merchandise" Item
+            newItemName.text = "Fully Functional Hanger";
             CraftedItemImage.GetComponent<Image>().sprite = FunctionalHanger;
             Countdown();
             craftedPanel.AddItem(functionalHanger);
@@ -494,6 +518,7 @@ public class CraftingSystem : MonoBehaviour
             craftingPanel.craftingSlots[0].Item = null;
             craftingPanel.craftingSlots[1].Item = null;
             //Create "Unsellable Merchandise" Item
+            newItemName.text = "Pen Missle";
             CraftedItemImage.GetComponent<Image>().sprite = PenMissle;
             Countdown();
             craftedPanel.AddItem(penMissle);
@@ -510,6 +535,7 @@ public class CraftingSystem : MonoBehaviour
             craftingPanel.craftingSlots[0].Item = null;
             craftingPanel.craftingSlots[1].Item = null;
             //Create "Unsellable Merchandise" Item
+            newItemName.text = "Cry For Help";
             CraftedItemImage.GetComponent<Image>().sprite = CryForHelp;
             Countdown();
             craftedPanel.AddItem(cryForHelp);
@@ -526,6 +552,7 @@ public class CraftingSystem : MonoBehaviour
             craftingPanel.craftingSlots[0].Item = null;
             craftingPanel.craftingSlots[1].Item = null;
             //Create "Unsellable Merchandise" Item
+            newItemName.text = "Hanger Frisbee";
             CraftedItemImage.GetComponent<Image>().sprite = HangerFrisbee;
             Countdown();
             craftedPanel.AddItem(hangerFrisbee);
@@ -541,6 +568,7 @@ public class CraftingSystem : MonoBehaviour
             craftingPanel.craftingSlots[0].Item = null;
             craftingPanel.craftingSlots[1].Item = null;
             //Create "Unsellable Merchandise" Item
+            newItemName.text = "Toilet Paper Hoarder";
             CraftedItemImage.GetComponent<Image>().sprite = ToiletPaperHoarder;
             Countdown();
             craftedPanel.AddItem(toiletPaperHoarder);
@@ -557,6 +585,7 @@ public class CraftingSystem : MonoBehaviour
             craftingPanel.craftingSlots[0].Item = null;
             craftingPanel.craftingSlots[1].Item = null;
             //Create "Unsellable Merchandise" Item
+            newItemName.text = "Toilet Paper Launcher";
             CraftedItemImage.GetComponent<Image>().sprite = ToiletPaperLauncher;
             Countdown();
             craftedPanel.AddItem(toiletPaperLauncher);
@@ -572,6 +601,7 @@ public class CraftingSystem : MonoBehaviour
             craftingPanel.craftingSlots[0].Item = null;
             craftingPanel.craftingSlots[1].Item = null;
             //Create "Unsellable Merchandise" Item
+            newItemName.text = "Redneck Nunchucks";
             CraftedItemImage.GetComponent<Image>().sprite = RedneckNunchucks;
             Countdown();
             craftedPanel.AddItem(redneckNunchucks);
