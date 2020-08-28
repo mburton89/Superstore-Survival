@@ -148,7 +148,11 @@ namespace UnityStandardAssets.Characters.ThirdPerson
             Debug.DrawRay(transform.position + Vector3.up * heightMultiplier, (transform.forward - (transform.right * 0.2f)).normalized * sightDist, Color.green);
             if (Physics.Raycast (transform.position + Vector3.up * heightMultiplier, transform.forward, out hit, sightDist))
             {
-                if (hit.collider.gameObject.CompareTag("Player"))
+                if (hit.collider.gameObject.CompareTag("HidingSpot"))
+                {
+                    state = EnemySight.State.PATROL;
+                }
+                else if (hit.collider.gameObject.CompareTag("Player"))
                 {
                     state = EnemySight.State.CHASE;
                     target = hit.collider.gameObject;
@@ -156,7 +160,11 @@ namespace UnityStandardAssets.Characters.ThirdPerson
             }
             if (Physics.Raycast (transform.position + Vector3.up * heightMultiplier, (transform.forward + transform.right).normalized, out hit, sightDist))
             {
-                if (hit.collider.gameObject.CompareTag("Player"))
+                if (hit.collider.gameObject.CompareTag("HidingSpot"))
+                {
+                    state = EnemySight.State.PATROL;
+                }
+                else if (hit.collider.gameObject.CompareTag("Player"))
                 {
                     state = EnemySight.State.CHASE;
                     target = hit.collider.gameObject;
@@ -164,7 +172,11 @@ namespace UnityStandardAssets.Characters.ThirdPerson
             }
             if (Physics.Raycast (transform.position + Vector3.up * heightMultiplier, (transform.forward - transform.right).normalized, out hit, sightDist))
             {
-                if (hit.collider.gameObject.CompareTag("Player"))
+                if (hit.collider.gameObject.CompareTag("HidingSpot"))
+                {
+                    state = EnemySight.State.PATROL;
+                }
+                else if (hit.collider.gameObject.CompareTag("Player"))
                 {
                     state = EnemySight.State.CHASE;
                     target = hit.collider.gameObject;
@@ -172,7 +184,11 @@ namespace UnityStandardAssets.Characters.ThirdPerson
             }
             if (Physics.Raycast (transform.position + Vector3.up * heightMultiplier, (transform.forward + (transform.right * 0.7f)).normalized, out hit, sightDist))
             {
-                if (hit.collider.gameObject.CompareTag("Player"))
+                if (hit.collider.gameObject.CompareTag("HidingSpot"))
+                {
+                    state = EnemySight.State.PATROL;
+                }
+                else if (hit.collider.gameObject.CompareTag("Player"))
                 {
                     state = EnemySight.State.CHASE;
                     target = hit.collider.gameObject;
@@ -180,7 +196,11 @@ namespace UnityStandardAssets.Characters.ThirdPerson
             }
             if (Physics.Raycast(transform.position + Vector3.up * heightMultiplier, (transform.forward - (transform.right * 0.7f)).normalized, out hit, sightDist))
             {
-                if (hit.collider.gameObject.CompareTag("Player"))
+                if (hit.collider.gameObject.CompareTag("HidingSpot"))
+                {
+                    state = EnemySight.State.PATROL;
+                }
+                else if (hit.collider.gameObject.CompareTag("Player"))
                 {
                     state = EnemySight.State.CHASE;
                     target = hit.collider.gameObject;
@@ -188,7 +208,11 @@ namespace UnityStandardAssets.Characters.ThirdPerson
             }
             if (Physics.Raycast(transform.position + Vector3.up * heightMultiplier, (transform.forward + (transform.right * 0.5f)).normalized, out hit, sightDist))
             {
-                if (hit.collider.gameObject.CompareTag("Player"))
+                if (hit.collider.gameObject.CompareTag("HidingSpot"))
+                {
+                    state = EnemySight.State.PATROL;
+                }
+                else if (hit.collider.gameObject.CompareTag("Player"))
                 {
                     state = EnemySight.State.CHASE;
                     target = hit.collider.gameObject;
@@ -196,7 +220,11 @@ namespace UnityStandardAssets.Characters.ThirdPerson
             }
             if (Physics.Raycast(transform.position + Vector3.up * heightMultiplier, (transform.forward - (transform.right * 0.5f)).normalized, out hit, sightDist))
             {
-                if (hit.collider.gameObject.CompareTag("Player"))
+                if (hit.collider.gameObject.CompareTag("HidingSpot"))
+                {
+                    state = EnemySight.State.PATROL;
+                }
+                else if (hit.collider.gameObject.CompareTag("Player"))
                 {
                     state = EnemySight.State.CHASE;
                     target = hit.collider.gameObject;
@@ -204,7 +232,11 @@ namespace UnityStandardAssets.Characters.ThirdPerson
             }
             if (Physics.Raycast(transform.position + Vector3.up * heightMultiplier, (transform.forward + (transform.right * 0.2f)).normalized, out hit, sightDist))
             {
-                if (hit.collider.gameObject.CompareTag("Player"))
+                if (hit.collider.gameObject.CompareTag("HidingSpot"))
+                {
+                    state = EnemySight.State.PATROL;
+                }
+                else if (hit.collider.gameObject.CompareTag("Player"))
                 {
                     state = EnemySight.State.CHASE;
                     target = hit.collider.gameObject;
@@ -212,7 +244,11 @@ namespace UnityStandardAssets.Characters.ThirdPerson
             }
             if (Physics.Raycast(transform.position + Vector3.up * heightMultiplier, (transform.forward - (transform.right * 0.2f)).normalized, out hit, sightDist))
             {
-                if (hit.collider.gameObject.CompareTag("Player"))
+                if (hit.collider.gameObject.CompareTag("HidingSpot"))
+                {
+                    state = EnemySight.State.PATROL;
+                }
+                else if (hit.collider.gameObject.CompareTag("Player"))
                 {
                     state = EnemySight.State.CHASE;
                     target = hit.collider.gameObject;

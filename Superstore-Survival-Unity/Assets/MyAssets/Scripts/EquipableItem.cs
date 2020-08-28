@@ -1,6 +1,9 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityStandardAssets.Characters.FirstPerson;
+using UnityStandardAssets.Characters.ThirdPerson;
 
 public enum ItemType
 {
@@ -8,9 +11,6 @@ public enum ItemType
     Crafted,
     Special
 }
-
-<<<<<<< Updated upstream
-=======
 public enum ItemName
 {
     Trash,
@@ -20,22 +20,47 @@ public enum ItemName
     CheapBallpointPen,
     ToiletPaper,
     BrokenHanger,
-    PileOfTrash
+    PileOfTrash,
+    UnsellableMerchandise,
+    TrashConfetti,
+    TrashGrenade,
+    StankyPen,
+    SoiledToiletPaper,
+    CompleteTrash,
+    SuspiciousActivity,
+    IncriminatingFootage,
+    EmployeeMonth,
+    RecordedLoss,
+    PutridBox,
+    AbsurdConcoction,
+    EmosParadise,
+    TapeStrips,
+    InkMess,
+    ToiletPaperShreds,
+    SeverelyBrokenHanger,
+    TapeBall,
+    YoyoPen,
+    ToiletPaperBomb,
+    FunctionalHanger,
+    PenMissle,
+    CryForHelp,
+    HangerFrisbee,
+    ToiletPaperHoarder,
+    ToiletPaperLauncher,
+    RedneckNunchucks
 }
 
->>>>>>> Stashed changes
 [CreateAssetMenu]
 public class EquipableItem : Item
 {
-    public int SpeedBonus;
-    public int TimeBonus;
-    public int DetectionBonnus;
-    public int EnemySpeedBonus;
-    [Space]
-    public float SpeedPercentBonus;
-    public float TimePercentBonus;
-    public float DetectionPercentBonus;
-    public float EnemySpeedPercentBonus;
+    public float PlayerSpeedIncrease;
+    public float PlayerSpeedDecrease;
+    public float TimeSpeedIncrease;
+    public float TimeSpeedDecrease;
+    public float DetectionIncrease;
+    public float DetectionDecrease;
+    public float EnemySpeedIncrease;
+    public float EnemySpeedDecrease;
     [Space]
     public ItemType ItemType;
 
@@ -46,5 +71,45 @@ public class EquipableItem : Item
     public void Unequip(InventoryManager c)
     {
 
+    }
+
+    public void IncreasePlayerSpeed(FirstPersonController character)
+    {
+        character.m_RunSpeed *= PlayerSpeedIncrease;
+    }
+
+    public void DecreasePlayerSpeed(FirstPersonController character)
+    {
+        character.m_RunSpeed /= PlayerSpeedDecrease;
+    }
+
+    public void IncreaseTimeCount(Timer timer)
+    {
+        timer.speed = TimeSpeedIncrease;
+    }
+
+    public void DecreaseTimeCount(Timer timer)
+    {
+        timer.speed = TimeSpeedDecrease;
+    }
+
+    public void IncreaseDetection(EnemySight enemy)
+    {
+        enemy.sightDist = DetectionIncrease;
+    }
+
+    public void DecreaseDetection(EnemySight enemy)
+    {
+        enemy.sightDist = DetectionDecrease;
+    }
+
+    public void IncreaseEnemySpeed(EnemySight enemy)
+    {
+        enemy.patrolSpeed = EnemySpeedIncrease;
+    }
+
+    public void DecreaseEnemySpeed(EnemySight enemy)
+    {
+        enemy.patrolSpeed = EnemySpeedDecrease;
     }
 }

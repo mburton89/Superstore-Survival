@@ -8,7 +8,7 @@ public class Timer : MonoBehaviour
     public float timeRemaining = 10;
     public bool timerIsRunning = false;
     public Text timeText;
-    public float speed = 1;
+    public float speed = 1f;
     
     private void Start()
     {

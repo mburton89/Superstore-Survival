@@ -8,7 +8,9 @@ public class InventoryManager : MonoBehaviour
 {
     [SerializeField] Inventory inventory;
     [SerializeField] CraftingPanel craftingPanel;
+    [SerializeField] Inventory craftedPanel;
     [SerializeField] ItemTooltip itemTooltip;
+    [SerializeField] ItemTooltip craftedTooltip;
     [SerializeField] Image draggableItem;
     [SerializeField] DropItemArea dropItemArea;
     [SerializeField] QuestionDialog questionDialog;
@@ -27,30 +29,37 @@ public class InventoryManager : MonoBehaviour
     {
         //Setup Events
         //Right Click
-        inventory.OnRightClickEvent += Equip;
-        craftingPanel.OnRightClickEvent += Unequip;
+        inventory.OnRightClickEvent += InventoryRightClick;
+        craftingPanel.OnRightClickEvent += CraftingPanelRightClick;
+        craftedPanel.OnRightClickEvent += InventoryRightClick;
         //Pointer Enter
         inventory.OnPointerEnterEvent += ShowTooltip;
         craftingPanel.OnPointerEnterEvent += ShowTooltip;
+        craftedPanel.OnPointerEnterEvent += ShowTooltip;
         //Pointer Exit
         inventory.OnPointerExitEvent += HideTooltip;
         craftingPanel.OnPointerExitEvent += HideTooltip;
+        craftedPanel.OnPointerExitEvent += HideTooltip;
         //Begin Drag
         inventory.OnBeginDragEvent += BeginDrag;
         craftingPanel.OnBeginDragEvent += BeginDrag;
+        craftedPanel.OnBeginDragEvent += BeginDrag;
         //End Drag
         inventory.OnEndDragEvent += EndDrag;
         craftingPanel.OnEndDragEvent += EndDrag;
+        craftedPanel.OnEndDragEvent += EndDrag;
         //Drag
         inventory.OnDragEvent += Drag;
         craftingPanel.OnDragEvent += Drag;
+        craftedPanel.OnDragEvent += Drag;
         //Drop
         inventory.OnDropEvent += Drop;
         craftingPanel.OnDropEvent += Drop;
+        craftedPanel.OnDropEvent += Drop;
         dropItemArea.OnDropEvent += DiscardItem;
     }
 
-    private void Equip(ItemSlot itemSlot)
+    private void InventoryRightClick(ItemSlot itemSlot)
     {
         EquipableItem equipableItem = itemSlot.Item as EquipableItem;
         if (equipableItem != null)
@@ -59,7 +68,7 @@ public class InventoryManager : MonoBehaviour
         }
     }
 
-    private void Unequip(ItemSlot itemSlot)
+    private void CraftingPanelRightClick(ItemSlot itemSlot)
     {
         EquipableItem equipableItem = itemSlot.Item as EquipableItem;
         if (equipableItem != null)
@@ -74,12 +83,14 @@ public class InventoryManager : MonoBehaviour
         if (equipableItem != null)
         {
             itemTooltip.ShowTooltip(equipableItem);
+            craftedTooltip.ShowTooltip(equipableItem);
         }
     }
 
     private void HideTooltip(ItemSlot itemSlot)
     {
         itemTooltip.HideTooltip();
+        craftedTooltip.HideTooltip();
     }
 
     private void BeginDrag(ItemSlot itemSlot)

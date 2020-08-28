@@ -13,7 +13,10 @@ public class InventoryInput : MonoBehaviour
     [SerializeField] KeyCode[] toggleCraftingKeys;
 
     public GameObject Player;
-    
+
+    public float timeRemaining = 2;
+    public bool timerIsRunning = false;
+
     void Awake()
     {
         HideCursor();
@@ -21,6 +24,20 @@ public class InventoryInput : MonoBehaviour
 
     void Update()
     {
+        if (timerIsRunning)
+        {
+            if (timeRemaining > 0)
+            {
+                timeRemaining -= Time.deltaTime;
+            }
+            else if (timeRemaining <= 0)
+            {
+                timeRemaining = 0;
+                timerIsRunning = false;
+                timeRemaining = 2;
+            }
+        }
+
         for (int i = 0; i < toggleInventoryKeys.Length; i++)
         {
             if (Input.GetKeyDown(toggleInventoryKeys[i]))
@@ -44,41 +61,46 @@ public class InventoryInput : MonoBehaviour
 
         for (int i = 0; i < toggleCraftedItemKeys.Length; i++)
         {
-            if (!craftedItemsGameObject.activeSelf && inventoryGameObject.activeSelf)
-            {
-                if (Input.GetKeyDown(toggleCraftedItemKeys[i]))
+                if (!craftedItemsGameObject.activeSelf && inventoryGameObject.activeSelf)
                 {
-                    craftingGameObject.SetActive(!craftingGameObject.activeSelf);
+                    if (Input.GetKeyDown(toggleCraftedItemKeys[i]))
+                    {
+                        craftingGameObject.SetActive(!craftingGameObject.activeSelf);
+                    }
                 }
-            }
-            else
-            {
-                craftingGameObject.SetActive(false);
-            }
+                else
+                {
+                    craftingGameObject.SetActive(false);
+                }
 
-            break;
+                break;
         }
 
         for (int i = 0; i < toggleCraftingKeys.Length; i++)
         {
-            if (Input.GetKeyDown(toggleCraftingKeys[i]))
-            {
-                craftedItemsGameObject.SetActive(!craftedItemsGameObject.activeSelf);
-
-                if (craftedItemsGameObject.activeSelf)
+                if (Input.GetKeyDown(toggleCraftingKeys[i]))
                 {
-                    inventoryGameObject.SetActive(false);
-                    craftingGameObject.SetActive(false);
-                    ShowCursor();
-                }
-                else
-                {
-                    HideCursor();
-                }
+                    craftedItemsGameObject.SetActive(!craftedItemsGameObject.activeSelf);
 
-                break;
-            }
+                    if (craftedItemsGameObject.activeSelf)
+                    {
+                        inventoryGameObject.SetActive(false);
+                        craftingGameObject.SetActive(false);
+                        ShowCursor();
+                    }
+                    else
+                    {
+                        HideCursor();
+                    }
+
+                    break;
+                }
         }
+    }
+
+    private void Countdown()
+    {
+        timerIsRunning = true;
     }
 
     public void ShowCursor()

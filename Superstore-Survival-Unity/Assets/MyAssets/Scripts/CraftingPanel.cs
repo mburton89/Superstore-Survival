@@ -2,12 +2,13 @@
 using System.Collections.Generic;
 using System;
 using UnityEngine;
-using UnityEngine.UIElements;
+using UnityEngine.UI;
 
 public class CraftingPanel : MonoBehaviour
 {
     [SerializeField] Transform craftingSlotsParent;
-    [SerializeField] CraftingItemSlot[] craftingSlots;
+
+    public CraftingItemSlot[] craftingSlots;
 
     public event Action<ItemSlot> OnPointerEnterEvent;
     public event Action<ItemSlot> OnPointerExitEvent;
