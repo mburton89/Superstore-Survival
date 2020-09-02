@@ -97,7 +97,7 @@ namespace UnityStandardAssets.Characters.ThirdPerson
             }
             else
             {
-                character.Move (Vector3.zero, false, false);
+                character.Move(Vector3.zero, false, false);
             }
         }
 
@@ -146,7 +146,7 @@ namespace UnityStandardAssets.Characters.ThirdPerson
             Debug.DrawRay(transform.position + Vector3.up * heightMultiplier, (transform.forward - (transform.right * 0.5f)).normalized * sightDist, Color.green);
             Debug.DrawRay(transform.position + Vector3.up * heightMultiplier, (transform.forward + (transform.right * 0.2f)).normalized * sightDist, Color.green);
             Debug.DrawRay(transform.position + Vector3.up * heightMultiplier, (transform.forward - (transform.right * 0.2f)).normalized * sightDist, Color.green);
-            if (Physics.Raycast (transform.position + Vector3.up * heightMultiplier, transform.forward, out hit, sightDist))
+            if (Physics.Raycast(transform.position + Vector3.up * heightMultiplier, transform.forward, out hit, sightDist))
             {
                 if (hit.collider.gameObject.CompareTag("HidingSpot"))
                 {
@@ -158,7 +158,7 @@ namespace UnityStandardAssets.Characters.ThirdPerson
                     target = hit.collider.gameObject;
                 }
             }
-            if (Physics.Raycast (transform.position + Vector3.up * heightMultiplier, (transform.forward + transform.right).normalized, out hit, sightDist))
+            if (Physics.Raycast(transform.position + Vector3.up * heightMultiplier, (transform.forward + transform.right).normalized, out hit, sightDist))
             {
                 if (hit.collider.gameObject.CompareTag("HidingSpot"))
                 {
@@ -170,7 +170,7 @@ namespace UnityStandardAssets.Characters.ThirdPerson
                     target = hit.collider.gameObject;
                 }
             }
-            if (Physics.Raycast (transform.position + Vector3.up * heightMultiplier, (transform.forward - transform.right).normalized, out hit, sightDist))
+            if (Physics.Raycast(transform.position + Vector3.up * heightMultiplier, (transform.forward - transform.right).normalized, out hit, sightDist))
             {
                 if (hit.collider.gameObject.CompareTag("HidingSpot"))
                 {
@@ -182,7 +182,7 @@ namespace UnityStandardAssets.Characters.ThirdPerson
                     target = hit.collider.gameObject;
                 }
             }
-            if (Physics.Raycast (transform.position + Vector3.up * heightMultiplier, (transform.forward + (transform.right * 0.7f)).normalized, out hit, sightDist))
+            if (Physics.Raycast(transform.position + Vector3.up * heightMultiplier, (transform.forward + (transform.right * 0.7f)).normalized, out hit, sightDist))
             {
                 if (hit.collider.gameObject.CompareTag("HidingSpot"))
                 {
@@ -273,11 +273,18 @@ namespace UnityStandardAssets.Characters.ThirdPerson
             {
                 Player.GetComponent<FirstPersonController>().enabled = false;
                 Time.timeScale = 0;
+                showCursor();
             }
             else
             {
                 Time.timeScale = 1;
             }
+        }
+        public void showCursor()
+        {
+            Player.GetComponent<FirstPersonController>().enabled = false;
+            Cursor.visible = true;
+            Cursor.lockState = CursorLockMode.None;
         }
     }
 }
