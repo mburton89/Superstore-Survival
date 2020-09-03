@@ -8,32 +8,10 @@ using UnityStandardAssets.Characters.FirstPerson;
 public class YouWin : MonoBehaviour
 {
     public static YouWin Instance;
+    public Timer timer;
     public GameObject container;
     public Button nextLevelButton;
-    private bool pauseGame;
-    public GameObject Player;
 
-    private void ToggleTime()
-    {
-        pauseGame = !pauseGame;
-
-        if (pauseGame)
-        {
-            Player.GetComponent<FirstPersonController>().enabled = false;
-            Time.timeScale = 0;
-            showCursor();
-        }
-        else
-        {
-            Time.timeScale = 1;
-        }
-    }
-    public void showCursor()
-    {
-        Player.GetComponent<FirstPersonController>().enabled = false;
-        Cursor.visible = true;
-        Cursor.lockState = CursorLockMode.None;
-    }
     private void OnEnable()
     {
         nextLevelButton.onClick.AddListener(HandleNextLevelPressed);
@@ -58,5 +36,6 @@ public class YouWin : MonoBehaviour
     public void Show()
     {
         container.SetActive(true);
+        timer.ToggleTime();
     }
 }

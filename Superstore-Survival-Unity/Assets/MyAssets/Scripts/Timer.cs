@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityStandardAssets.Characters.FirstPerson;
 
 public class Timer : MonoBehaviour
 {
@@ -9,6 +10,8 @@ public class Timer : MonoBehaviour
     public bool timerIsRunning = false;
     public Text timeText;
     public float speed = 1f;
+    private bool pauseGame = false;
+    public GameObject Player;
     
     private void Start()
     {
@@ -30,7 +33,6 @@ public class Timer : MonoBehaviour
             }
             else
             {
-                Debug.Log("Time has run out!");
                 timeRemaining = 0;
                 timerIsRunning = false;
                 YouWin.Instance.Show();
@@ -46,5 +48,27 @@ public class Timer : MonoBehaviour
         float seconds = Mathf.FloorToInt(timeToDisplay % 60);
 
         timeText.text = string.Format("{0:00}:{1:00}", minutes, seconds);
+    }
+
+    public void ToggleTime()
+    {
+        pauseGame = !pauseGame;
+
+        if (pauseGame)
+        {
+            Player.GetComponent<FirstPersonController>().enabled = false;
+            Time.timeScale = 0;
+            showCursor();
+        }
+        else
+        {
+            Time.timeScale = 1;
+        }
+    }
+    public void showCursor()
+    {
+        Player.GetComponent<FirstPersonController>().enabled = false;
+        Cursor.visible = true;
+        Cursor.lockState = CursorLockMode.None;
     }
 }
