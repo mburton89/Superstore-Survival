@@ -8,6 +8,8 @@ namespace UnityStandardAssets.Characters.ThirdPerson
 {
     public class EnemySight : MonoBehaviour
     {
+        [SerializeField] Animator myAnimatorController;
+        
         public GameObject Player;
 
         public NavMeshAgent agent;
@@ -85,6 +87,10 @@ namespace UnityStandardAssets.Characters.ThirdPerson
 
         void Patrol()
         {
+            myAnimatorController.SetBool("investigating", false);
+            myAnimatorController.SetBool("walking", true);
+            myAnimatorController.SetBool("running", false);
+
             agent.speed = patrolSpeed;
             if (Vector3.Distance(this.transform.position, waypoints[waypointInd].transform.position) >= 2)
             {
@@ -103,18 +109,27 @@ namespace UnityStandardAssets.Characters.ThirdPerson
 
         void Chase()
         {
+            myAnimatorController.SetBool("investigating", false);
+            myAnimatorController.SetBool("walking", false);
+            myAnimatorController.SetBool("running", true);
+
             chaseTime -= Time.deltaTime;
             agent.speed = chaseSpeed;
             agent.SetDestination(target.transform.position);
             character.Move(agent.desiredVelocity, false, false);
             if (chaseTime <= 0)
             {
+                chaseTime = 10f;
                 state = EnemySight.State.INVESTIGATE;
             }
         }
 
         void Investigate()
         {
+            myAnimatorController.SetBool("investigating", true);
+            myAnimatorController.SetBool("walking", false);
+            myAnimatorController.SetBool("running", false);
+
             timer += Time.deltaTime;
             agent.SetDestination(this.transform.position);
             character.Move(Vector3.zero, false, false);
@@ -152,6 +167,10 @@ namespace UnityStandardAssets.Characters.ThirdPerson
                 {
                     state = EnemySight.State.PATROL;
                 }
+                else if (hit.collider.gameObject.CompareTag("HidingSpot") && state == State.CHASE)
+                {
+                    state = EnemySight.State.INVESTIGATE;
+                }
                 else if (hit.collider.gameObject.CompareTag("Player"))
                 {
                     state = EnemySight.State.CHASE;
@@ -163,6 +182,10 @@ namespace UnityStandardAssets.Characters.ThirdPerson
                 if (hit.collider.gameObject.CompareTag("HidingSpot"))
                 {
                     state = EnemySight.State.PATROL;
+                }
+                else if (hit.collider.gameObject.CompareTag("HidingSpot") && state == State.CHASE)
+                {
+                    state = EnemySight.State.INVESTIGATE;
                 }
                 else if (hit.collider.gameObject.CompareTag("Player"))
                 {
@@ -176,6 +199,10 @@ namespace UnityStandardAssets.Characters.ThirdPerson
                 {
                     state = EnemySight.State.PATROL;
                 }
+                else if (hit.collider.gameObject.CompareTag("HidingSpot") && state == State.CHASE)
+                {
+                    state = EnemySight.State.INVESTIGATE;
+                }
                 else if (hit.collider.gameObject.CompareTag("Player"))
                 {
                     state = EnemySight.State.CHASE;
@@ -187,6 +214,10 @@ namespace UnityStandardAssets.Characters.ThirdPerson
                 if (hit.collider.gameObject.CompareTag("HidingSpot"))
                 {
                     state = EnemySight.State.PATROL;
+                }
+                else if (hit.collider.gameObject.CompareTag("HidingSpot") && state == State.CHASE)
+                {
+                    state = EnemySight.State.INVESTIGATE;
                 }
                 else if (hit.collider.gameObject.CompareTag("Player"))
                 {
@@ -200,6 +231,10 @@ namespace UnityStandardAssets.Characters.ThirdPerson
                 {
                     state = EnemySight.State.PATROL;
                 }
+                else if (hit.collider.gameObject.CompareTag("HidingSpot") && state == State.CHASE)
+                {
+                    state = EnemySight.State.INVESTIGATE;
+                }
                 else if (hit.collider.gameObject.CompareTag("Player"))
                 {
                     state = EnemySight.State.CHASE;
@@ -211,6 +246,10 @@ namespace UnityStandardAssets.Characters.ThirdPerson
                 if (hit.collider.gameObject.CompareTag("HidingSpot"))
                 {
                     state = EnemySight.State.PATROL;
+                }
+                else if (hit.collider.gameObject.CompareTag("HidingSpot") && state == State.CHASE)
+                {
+                    state = EnemySight.State.INVESTIGATE;
                 }
                 else if (hit.collider.gameObject.CompareTag("Player"))
                 {
@@ -224,6 +263,10 @@ namespace UnityStandardAssets.Characters.ThirdPerson
                 {
                     state = EnemySight.State.PATROL;
                 }
+                else if (hit.collider.gameObject.CompareTag("HidingSpot") && state == State.CHASE)
+                {
+                    state = EnemySight.State.INVESTIGATE;
+                }
                 else if (hit.collider.gameObject.CompareTag("Player"))
                 {
                     state = EnemySight.State.CHASE;
@@ -236,6 +279,10 @@ namespace UnityStandardAssets.Characters.ThirdPerson
                 {
                     state = EnemySight.State.PATROL;
                 }
+                else if (hit.collider.gameObject.CompareTag("HidingSpot") && state == State.CHASE)
+                {
+                    state = EnemySight.State.INVESTIGATE;
+                }
                 else if (hit.collider.gameObject.CompareTag("Player"))
                 {
                     state = EnemySight.State.CHASE;
@@ -247,6 +294,10 @@ namespace UnityStandardAssets.Characters.ThirdPerson
                 if (hit.collider.gameObject.CompareTag("HidingSpot"))
                 {
                     state = EnemySight.State.PATROL;
+                }
+                else if (hit.collider.gameObject.CompareTag("HidingSpot") && state == State.CHASE)
+                {
+                    state = EnemySight.State.INVESTIGATE;
                 }
                 else if (hit.collider.gameObject.CompareTag("Player"))
                 {
