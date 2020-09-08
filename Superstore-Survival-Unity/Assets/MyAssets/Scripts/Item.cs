@@ -11,6 +11,7 @@ public class Item : ScriptableObject
     public string ItemName;
     public Sprite Icon;
 
+    //Create object as item
     private void OnValidate()
     {
         string path = AssetDatabase.GetAssetPath(this);

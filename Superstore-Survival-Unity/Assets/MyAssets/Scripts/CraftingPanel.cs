@@ -37,6 +37,7 @@ public class CraftingPanel : MonoBehaviour
         craftingSlots = craftingSlotsParent.GetComponentsInChildren<CraftingItemSlot>();
     }
 
+    //Switch item between inventory and crafting panel
     public bool AddItem(EquipableItem item, out EquipableItem previousItem)
     {
         for (int i = 0; i < craftingSlots.Length; i++)
@@ -52,6 +53,7 @@ public class CraftingPanel : MonoBehaviour
         return false;
     }
 
+    //Move item between inventory and crafting panel
     public bool RemoveItem(EquipableItem item)
     {
         for (int i = 0; i < craftingSlots.Length; i++)

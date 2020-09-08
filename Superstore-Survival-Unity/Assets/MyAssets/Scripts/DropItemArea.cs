@@ -9,6 +9,7 @@ public class DropItemArea : MonoBehaviour, IDropHandler
 {
     public event Action OnDropEvent;
 
+    //Specify where in the UI an item can be dropped in order to discard it
     public void OnDrop(PointerEventData eventData)
     {
         if (OnDropEvent != null)

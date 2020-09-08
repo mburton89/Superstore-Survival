@@ -8,6 +8,7 @@ public class QuestionDialog : MonoBehaviour
     public event Action OnYesEvent;
     public event Action OnNoEvent;
 
+    //Make yes or no question popup appear
     public void Show()
     {
         gameObject.SetActive(true);
@@ -15,11 +16,13 @@ public class QuestionDialog : MonoBehaviour
         OnNoEvent = null;
     }
 
+    //Make yes or no question popup disappear
     public void Hide()
     {
         gameObject.SetActive(false);
     }
 
+    //When yes is clicked activate yes event
     public void OnYesButtonClick()
     {
         if (OnYesEvent != null)
@@ -30,6 +33,7 @@ public class QuestionDialog : MonoBehaviour
         Hide();
     }
 
+    //When no is clicked activate no event
     public void OnNoButtonClick()
     {
         if (OnNoEvent != null)

@@ -11,10 +11,10 @@ public class CraftingItemSlot : ItemSlot
 
     public override bool CanReceiveItem(Item item)
     {
+        //Determine if item slot is empty
         if (item == null)
         {
             return true;
-
         }
 
         EquipableItem equipableItem = item as EquipableItem;

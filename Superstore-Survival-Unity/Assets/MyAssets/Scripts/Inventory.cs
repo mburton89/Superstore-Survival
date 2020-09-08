@@ -46,6 +46,7 @@ public class Inventory : MonoBehaviour, IItemContainer
         SetStartingItems();
     }
 
+    //Add any starting items that we may want the player to begin the game with from the editor into their inventory
     private void SetStartingItems()
     {
         int i = 0;
@@ -60,6 +61,7 @@ public class Inventory : MonoBehaviour, IItemContainer
         }
     }
 
+    //Add item into the inventory panel in terms of moving the sprite around
     public bool AddItem(Item item)
     {
         for (int i = 0; i < itemSlots.Length; i++)
@@ -73,6 +75,7 @@ public class Inventory : MonoBehaviour, IItemContainer
         return false;
     }
 
+    //Remove item from the inventory panel in terms of moving the sprite around
     public bool RemoveItem(Item item)
     {
         for (int i = 0; i < itemSlots.Length; i++)
@@ -86,6 +89,7 @@ public class Inventory : MonoBehaviour, IItemContainer
         return false;
     }
 
+    //Remove item from the inventory entirely as in deleting an item
     public Item RemoveItem(string itemID)
     {
         for (int i = 0; i < itemSlots.Length; i++)
@@ -100,7 +104,7 @@ public class Inventory : MonoBehaviour, IItemContainer
         return null;
     }
 
-
+    //Determine if the inventory panel is full
     public bool IsFull()
     {
         for (int i = 0; i < itemSlots.Length; i++)
@@ -113,6 +117,7 @@ public class Inventory : MonoBehaviour, IItemContainer
         return true;
     }
 
+    //Determine if an inventory slot is empty or not
     public bool ContainsItem(Item item)
     {
         for (int i = 0; 1 <itemSlots.Length; i++)
@@ -125,6 +130,7 @@ public class Inventory : MonoBehaviour, IItemContainer
         return false;
     }
 
+    //Determine how many items of the same kin are in the inventory to prevent unintentional stacking
     public int ItemCount(string itemID)
     {
         int number = 0;

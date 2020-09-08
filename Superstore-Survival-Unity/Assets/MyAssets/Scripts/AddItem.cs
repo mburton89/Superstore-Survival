@@ -10,6 +10,7 @@ public class AddItem : MonoBehaviour
 
     private bool isInRange;
 
+    //Pickup item and add to player's inventory
     void Update()
     {
         if (isInRange && Input.GetKeyDown(itemPickupKeyCode))
@@ -23,6 +24,7 @@ public class AddItem : MonoBehaviour
         }
     }
     
+    //Determine that player is close enough to pickup item
     private void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.CompareTag("Player"))
@@ -31,6 +33,7 @@ public class AddItem : MonoBehaviour
         }
     }
 
+    //Determine that player is not close enough to pickup item
     private void OnTriggerExit(Collider other)
     {
         if (other.gameObject.CompareTag("Player"))

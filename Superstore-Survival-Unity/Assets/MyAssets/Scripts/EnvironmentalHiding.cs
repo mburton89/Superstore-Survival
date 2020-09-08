@@ -20,6 +20,7 @@ public class EnvironmentalHiding : MonoBehaviour
     public float speed = 1f;
     public GameObject timerBar;
 
+    //Determine if player is hiding in a hiding spot
     void Update()
     {
         if (isHiding == true)
@@ -27,12 +28,14 @@ public class EnvironmentalHiding : MonoBehaviour
             Hiding();
         }
 
+        //If player is not hiding turn off screen darkening effect and countdown bar
         if (isHiding == false)
         {
             overlay.SetActive(false);
             timerBar.SetActive(false);
         }
 
+        //Start countdown for how long player can hide in the hiding spot
         if (timerIsRunning)
         {
             if (timeRemaining > 0)
@@ -51,16 +54,19 @@ public class EnvironmentalHiding : MonoBehaviour
             }
         }
 
+        //Countdown bar begins shrinking
         timerBar1.fillAmount = timeRemaining / maxTime;
         timerBar2.fillAmount = timeRemaining / maxTime;
     }
 
+    //Activate screen darkening effect and countdown bar
     public void Hiding()
     {
         overlay.SetActive(true);
         timerBar.SetActive(true);
     }
 
+    //Activate player as being in hiding
     private void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.CompareTag("Player"))
@@ -70,6 +76,7 @@ public class EnvironmentalHiding : MonoBehaviour
         }
     }
 
+    //Deactivate player as being in hiding
     private void OnTriggerExit(Collider other)
     {
         if (other.gameObject.CompareTag("Player"))

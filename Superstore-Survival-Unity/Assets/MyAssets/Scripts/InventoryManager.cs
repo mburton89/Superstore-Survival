@@ -93,6 +93,7 @@ public class InventoryManager : MonoBehaviour
         craftedTooltip.HideTooltip();
     }
 
+    //Move item sprite from panel to cursor
     private void BeginDrag(ItemSlot itemSlot)
     {
         if (itemSlot.Item != null)
@@ -104,12 +105,14 @@ public class InventoryManager : MonoBehaviour
         }
     }
 
+    //End and reset item dragging
     private void EndDrag(ItemSlot itemSlot)
     {
         draggedSlot = null;
         draggableItem.enabled = false;
     }
 
+    //Item sprite follows cursor location
     private void Drag(ItemSlot itemSlot)
     {
         if (draggableItem.enabled)
@@ -118,6 +121,7 @@ public class InventoryManager : MonoBehaviour
         }
     }
 
+    //Move item sprite from cursor to panel
     private void Drop(ItemSlot dropItemSlot)
     {
         if (dropItemSlot.CanReceiveItem(draggedSlot.Item) && draggedSlot.CanReceiveItem(dropItemSlot.Item))
@@ -154,6 +158,7 @@ public class InventoryManager : MonoBehaviour
         }
     }
 
+    //Delete item from inventory when it is dropped outside of panels
     private void DiscardItem()
     {
         if (draggedSlot == null)
@@ -161,17 +166,20 @@ public class InventoryManager : MonoBehaviour
             return;
         }
 
+        //Open confirmation dialog box to confirm
         questionDialog.Show();
         ItemSlot itemSlot = draggedSlot;
         questionDialog.OnYesEvent += () => DestroyItemInSlot(itemSlot);
     }
 
+    //Delete item from inventory entirely
     private void DestroyItemInSlot(ItemSlot itemSlot)
     {
         Destroy(itemSlot.Item);
         itemSlot.Item = null;
     }
 
+    //Remove item from inventory panel and add to crafting window
     public void Equip(EquipableItem item)
     {
         if (inventory.RemoveItem(item))
@@ -191,6 +199,7 @@ public class InventoryManager : MonoBehaviour
         }
     }
 
+    //Remove item from crafting window and add back to inventory panel
     public void Unequip(EquipableItem item)
     {
         if (!inventory.IsFull() && craftingPanel.RemoveItem(item))

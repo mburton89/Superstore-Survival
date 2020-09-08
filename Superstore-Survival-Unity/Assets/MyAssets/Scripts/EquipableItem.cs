@@ -11,6 +11,8 @@ public enum ItemType
     Crafted,
     Special
 }
+
+//Decalre different items that are in the game
 public enum ItemName
 {
     Trash,
@@ -51,6 +53,7 @@ public enum ItemName
 }
 
 [CreateAssetMenu]
+//Decalre item's stat types
 public class EquipableItem : Item
 {
     public float PlayerSpeedIncrease;
@@ -64,6 +67,7 @@ public class EquipableItem : Item
     [Space]
     public ItemType ItemType;
 
+    //Empty functions that can be called by other scripts and functions. Not sure why they work but they do
     public void Equip(InventoryManager c)
     {
 
@@ -73,6 +77,7 @@ public class EquipableItem : Item
 
     }
 
+    //Change stats by item effects while playing
     public void IncreasePlayerSpeed(FirstPersonController character)
     {
         character.m_RunSpeed *= PlayerSpeedIncrease;

@@ -8,6 +8,7 @@ public class ItemTooltip : MonoBehaviour
 {
     [SerializeField] Text ItemNameText;
 
+    //Make item name apprear
     public void ShowTooltip (EquipableItem item)
     {
         ItemNameText.text = item.ItemName;
@@ -15,6 +16,7 @@ public class ItemTooltip : MonoBehaviour
         gameObject.SetActive(true);
     }
 
+    //Hide item name
     public void HideTooltip()
     {
         gameObject.SetActive(false);

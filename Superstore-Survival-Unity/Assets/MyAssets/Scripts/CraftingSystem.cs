@@ -12,6 +12,7 @@ public class CraftingSystem : MonoBehaviour
     [SerializeField] Button craftButton;
     [SerializeField] Item item;
 
+    //Actual items within the game
     [SerializeField] Item pileOfTrash;
     [SerializeField] Item unsellableMerchandise;
     [SerializeField] Item trashConfetti;
@@ -48,6 +49,7 @@ public class CraftingSystem : MonoBehaviour
     public GameObject inventoryFull;
     public Text newItemName;
 
+    //2D sprites of items in the UI
     public Sprite PileOfTrash;
     public Sprite UnsellableMerchandise;
     public Sprite TrashConfetti;
@@ -84,10 +86,12 @@ public class CraftingSystem : MonoBehaviour
     {
         if (timerIsRunning)
         {
+            //Start counting down for popups UI length
             if (timeRemaining > 0)
             {
                 timeRemaining -= Time.deltaTime;
             }
+            //Make UI popups disappear again
             else if (timeRemaining <= 0)
             {
                 timeRemaining = 0;
@@ -101,6 +105,7 @@ public class CraftingSystem : MonoBehaviour
         }
     }
 
+    //Determine if crafting button has been clicked
     private void OnEnable()
     {
         craftButton.onClick.AddListener(HandleCraftPressed);
@@ -113,17 +118,20 @@ public class CraftingSystem : MonoBehaviour
 
     void HandleCraftPressed()
     {
+        //if inventory is full display popup notifcation
         if (craftedPanel.IsFull() == true)
         {
             inventoryFull.SetActive(true);
             Countdown();
         }
+        //if inventory is not full craft the new item
         else
         {
             CraftItem();
         }
     }
 
+    //start timer for how long UI popups display
     private void Countdown()
     {
         timerIsRunning = true;

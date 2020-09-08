@@ -19,6 +19,7 @@ public class Timer : MonoBehaviour
         timerIsRunning = true;
     }
 
+    //Timer counts down
     public void Update()
     {
         if (timerIsRunning)
@@ -31,6 +32,7 @@ public class Timer : MonoBehaviour
                 }
                 DisplayTime(timeRemaining);
             }
+            //When timer reaches zero display a You Win popup
             else
             {
                 timeRemaining = 0;
@@ -40,6 +42,7 @@ public class Timer : MonoBehaviour
         }
     }
 
+    //Display the timer as UI
     void DisplayTime(float timeToDisplay)
     {
         timeToDisplay += 1;
@@ -50,6 +53,7 @@ public class Timer : MonoBehaviour
         timeText.text = string.Format("{0:00}:{1:00}", minutes, seconds);
     }
 
+    //Stop game and movement
     public void ToggleTime()
     {
         pauseGame = !pauseGame;
@@ -65,6 +69,8 @@ public class Timer : MonoBehaviour
             Time.timeScale = 1;
         }
     }
+
+    //Make cursor appear
     public void showCursor()
     {
         Player.GetComponent<FirstPersonController>().enabled = false;
