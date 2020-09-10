@@ -107,7 +107,7 @@ public class ItemSlot : MonoBehaviour, IPointerClickHandler, IPointerEnterHandle
         {
             if (OnRightClickEvent != null)
             {
-                OnRightClickEvent(this);
+               // OnRightClickEvent(this);
             }
         }
     }
