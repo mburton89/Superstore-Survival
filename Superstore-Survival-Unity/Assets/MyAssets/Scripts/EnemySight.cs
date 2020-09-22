@@ -3,6 +3,7 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.AI;
 using UnityStandardAssets.Characters.FirstPerson;
+using UnityEngine.Audio;
 
 namespace UnityStandardAssets.Characters.ThirdPerson
 {
@@ -149,6 +150,7 @@ namespace UnityStandardAssets.Characters.ThirdPerson
             if (timer >= investigateWait)
             {
                 state = EnemySight.State.PATROL;
+                timer = 0;
             }
         }
 
