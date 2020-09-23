@@ -1,26 +1,9 @@
 fileFormatVersion: 2
-guid: 3597f308e70fcef43b9c4d5c286b73d5
+guid: f62266f73723f4047914b65b70fcadb6
 ModelImporter:
   serializedVersion: 19300
-  internalIDToNameTable:
-  - first:
-      74: -2206035035070053949
-    second: Trash|Plane.001Action
-  - first:
-      74: -3590644997308151860
-    second: Trash|PlaneAction
-  - first:
-      74: -8198307380918338998
-    second: Trash|PlaneAction.001
-  - first:
-      74: -8698201194679497828
-    second: Trash|SphereAction
-  externalObjects:
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: papper.001
-    second: {fileID: 2100000, guid: 0668edd713a8a36428334cef78d20ccb, type: 2}
+  internalIDToNameTable: []
+  externalObjects: {}
   materials:
     materialImportMode: 1
     materialName: 0

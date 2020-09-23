@@ -48,7 +48,12 @@ ModelImporter:
   - first:
       74: 5448924010349091441
     second: Trash.003|Trash.002|Trash|SphereAction|Trash|SphereAction
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: papper.001
+    second: {fileID: 2100000, guid: 0668edd713a8a36428334cef78d20ccb, type: 2}
   materials:
     materialImportMode: 1
     materialName: 0
