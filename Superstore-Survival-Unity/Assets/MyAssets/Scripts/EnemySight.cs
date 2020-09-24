@@ -43,10 +43,14 @@ namespace UnityStandardAssets.Characters.ThirdPerson
         public float heightMultiplier;
         public float sightDist = 10;
 
+        [HideInInspector]
+        public EnemySoundManager enemySoundManager;
+
         void Start()
         {
             agent = GetComponent<NavMeshAgent>();
             character = GetComponent<ThirdPersonCharacter>();
+            enemySoundManager = GetComponentInChildren<EnemySoundManager>();
 
             agent.updatePosition = true;
             agent.updateRotation = false;
@@ -110,6 +114,7 @@ namespace UnityStandardAssets.Characters.ThirdPerson
             if (chaseTime <= 0)
             {
                 state = EnemySight.State.INVESTIGATE;
+                enemySoundManager.UpdateSound(State.INVESTIGATE);
             }
         }
 
@@ -122,6 +127,7 @@ namespace UnityStandardAssets.Characters.ThirdPerson
             if (timer >= investigateWait)
             {
                 state = EnemySight.State.PATROL;
+                enemySoundManager.UpdateSound(State.PATROL);
             }
         }
 
@@ -130,6 +136,7 @@ namespace UnityStandardAssets.Characters.ThirdPerson
             if (coll.CompareTag("Player"))
             {
                 state = EnemySight.State.INVESTIGATE;
+                enemySoundManager.UpdateSound(State.INVESTIGATE);
                 investigateSpot = coll.gameObject.transform.position;
             }
         }
@@ -151,10 +158,12 @@ namespace UnityStandardAssets.Characters.ThirdPerson
                 if (hit.collider.gameObject.CompareTag("HidingSpot"))
                 {
                     state = EnemySight.State.PATROL;
+                    enemySoundManager.UpdateSound(State.PATROL);
                 }
                 else if (hit.collider.gameObject.CompareTag("Player"))
                 {
                     state = EnemySight.State.CHASE;
+                    enemySoundManager.UpdateSound(State.CHASE);
                     target = hit.collider.gameObject;
                 }
             }
@@ -163,10 +172,12 @@ namespace UnityStandardAssets.Characters.ThirdPerson
                 if (hit.collider.gameObject.CompareTag("HidingSpot"))
                 {
                     state = EnemySight.State.PATROL;
+                    enemySoundManager.UpdateSound(State.PATROL);
                 }
                 else if (hit.collider.gameObject.CompareTag("Player"))
                 {
                     state = EnemySight.State.CHASE;
+                    enemySoundManager.UpdateSound(State.CHASE);
                     target = hit.collider.gameObject;
                 }
             }
@@ -175,10 +186,12 @@ namespace UnityStandardAssets.Characters.ThirdPerson
                 if (hit.collider.gameObject.CompareTag("HidingSpot"))
                 {
                     state = EnemySight.State.PATROL;
+                    enemySoundManager.UpdateSound(State.PATROL);
                 }
                 else if (hit.collider.gameObject.CompareTag("Player"))
                 {
                     state = EnemySight.State.CHASE;
+                    enemySoundManager.UpdateSound(State.CHASE);
                     target = hit.collider.gameObject;
                 }
             }
@@ -187,10 +200,12 @@ namespace UnityStandardAssets.Characters.ThirdPerson
                 if (hit.collider.gameObject.CompareTag("HidingSpot"))
                 {
                     state = EnemySight.State.PATROL;
+                    enemySoundManager.UpdateSound(State.PATROL);
                 }
                 else if (hit.collider.gameObject.CompareTag("Player"))
                 {
                     state = EnemySight.State.CHASE;
+                    enemySoundManager.UpdateSound(State.CHASE);
                     target = hit.collider.gameObject;
                 }
             }
@@ -199,10 +214,12 @@ namespace UnityStandardAssets.Characters.ThirdPerson
                 if (hit.collider.gameObject.CompareTag("HidingSpot"))
                 {
                     state = EnemySight.State.PATROL;
+                    enemySoundManager.UpdateSound(State.PATROL);
                 }
                 else if (hit.collider.gameObject.CompareTag("Player"))
                 {
                     state = EnemySight.State.CHASE;
+                    enemySoundManager.UpdateSound(State.CHASE);
                     target = hit.collider.gameObject;
                 }
             }
@@ -211,10 +228,12 @@ namespace UnityStandardAssets.Characters.ThirdPerson
                 if (hit.collider.gameObject.CompareTag("HidingSpot"))
                 {
                     state = EnemySight.State.PATROL;
+                    enemySoundManager.UpdateSound(State.PATROL);
                 }
                 else if (hit.collider.gameObject.CompareTag("Player"))
                 {
                     state = EnemySight.State.CHASE;
+                    enemySoundManager.UpdateSound(State.CHASE);
                     target = hit.collider.gameObject;
                 }
             }
@@ -223,10 +242,12 @@ namespace UnityStandardAssets.Characters.ThirdPerson
                 if (hit.collider.gameObject.CompareTag("HidingSpot"))
                 {
                     state = EnemySight.State.PATROL;
+                    enemySoundManager.UpdateSound(State.PATROL);
                 }
                 else if (hit.collider.gameObject.CompareTag("Player"))
                 {
                     state = EnemySight.State.CHASE;
+                    enemySoundManager.UpdateSound(State.CHASE);
                     target = hit.collider.gameObject;
                 }
             }
@@ -235,10 +256,12 @@ namespace UnityStandardAssets.Characters.ThirdPerson
                 if (hit.collider.gameObject.CompareTag("HidingSpot"))
                 {
                     state = EnemySight.State.PATROL;
+                    enemySoundManager.UpdateSound(State.PATROL);
                 }
                 else if (hit.collider.gameObject.CompareTag("Player"))
                 {
                     state = EnemySight.State.CHASE;
+                    enemySoundManager.UpdateSound(State.CHASE);
                     target = hit.collider.gameObject;
                 }
             }
@@ -247,10 +270,12 @@ namespace UnityStandardAssets.Characters.ThirdPerson
                 if (hit.collider.gameObject.CompareTag("HidingSpot"))
                 {
                     state = EnemySight.State.PATROL;
+                    enemySoundManager.UpdateSound(State.PATROL);
                 }
                 else if (hit.collider.gameObject.CompareTag("Player"))
                 {
                     state = EnemySight.State.CHASE;
+                    enemySoundManager.UpdateSound(State.CHASE);
                     target = hit.collider.gameObject;
                 }
             }
