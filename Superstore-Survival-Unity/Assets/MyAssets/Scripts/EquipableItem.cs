@@ -61,6 +61,8 @@ public class EquipableItem : Item
     public float DetectionDecrease;
     public float EnemySpeedIncrease;
     public float EnemySpeedDecrease;
+    public float Force;
+  
     [Space]
     public ItemType ItemType;
 
@@ -112,4 +114,5 @@ public class EquipableItem : Item
     {
         enemy.patrolSpeed = EnemySpeedDecrease;
     }
+
 }
