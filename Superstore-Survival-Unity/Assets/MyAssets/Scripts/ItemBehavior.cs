@@ -5,10 +5,17 @@ using UnityEngine;
 public class ItemBehavior : MonoBehaviour
 {
     public EquipableItem ScribtableObject;
-    private Rigidbody ItemRigidbody;
+    public Rigidbody ItemRigidbody;
+    public InventoryManager InventoryManager;
+
+    private void Start()
+    {
+        gameObject.SetActive(false);
+    }
     private void Awake()
     {
         ItemRigidbody = gameObject.GetComponent<Rigidbody>();
         ItemRigidbody.AddRelativeForce(Vector3.forward * ScribtableObject.Force);
+        
     }
 }

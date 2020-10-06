@@ -12,14 +12,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 518c63bea50c5b94699dbae67a51a737, type: 3}
   m_Name: TheftedMerchandise
   m_EditorClassIdentifier: 
+  id: c5420a2e001abf54db09569be166edaf
   ItemName: Thefted Merchandise
   Icon: {fileID: 21300000, guid: 99e52cbd375157f458e8d711a668cd23, type: 3}
-  SpeedBonus: 0
-  TimeBonus: 0
-  DetectionBonnus: 0
-  EnemySpeedBonus: 0
-  SpeedPercentBonus: 0
-  TimePercentBonus: 0
-  DetectionPercentBonus: 0
-  EnemySpeedPercentBonus: 0
+  Prefab: {fileID: 4332606917502204174, guid: b33fde3f3e6ccee418f4a453da1d72da, type: 3}
+  PlayerSpeedIncrease: 0
+  PlayerSpeedDecrease: 0
+  TimeSpeedIncrease: 0
+  TimeSpeedDecrease: 0
+  DetectionIncrease: 0
+  DetectionDecrease: 0
+  EnemySpeedIncrease: 0
+  EnemySpeedDecrease: 0
+  Force: 0
   ItemType: 0

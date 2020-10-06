@@ -12,14 +12,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 518c63bea50c5b94699dbae67a51a737, type: 3}
   m_Name: BallpointPen
   m_EditorClassIdentifier: 
+  id: ba53a5db9fe55794baada450992b2f1b
   ItemName: Cheap Ballpoint Pen
   Icon: {fileID: 21300000, guid: c9356691f44dbda49b2fffa85423a281, type: 3}
-  SpeedBonus: 0
-  TimeBonus: 0
-  DetectionBonnus: 0
-  EnemySpeedBonus: 0
-  SpeedPercentBonus: 0
-  TimePercentBonus: 0
-  DetectionPercentBonus: 0
-  EnemySpeedPercentBonus: 0
+  Prefab: {fileID: 8662431543133321505, guid: cb7ae12daa52ce04ab54d6f11bc9aa0f, type: 3}
+  PlayerSpeedIncrease: 0
+  PlayerSpeedDecrease: 0
+  TimeSpeedIncrease: 0
+  TimeSpeedDecrease: 0
+  DetectionIncrease: 0
+  DetectionDecrease: 0
+  EnemySpeedIncrease: 0
+  EnemySpeedDecrease: 0
+  Force: 0
   ItemType: 0

@@ -12,14 +12,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 518c63bea50c5b94699dbae67a51a737, type: 3}
   m_Name: BrokenHanger
   m_EditorClassIdentifier: 
+  id: f0e1d1ac6c49562418b29d432d2d9511
   ItemName: Broken Hanger
   Icon: {fileID: 21300000, guid: 8ae925666e157fb43a85097717a5f8a7, type: 3}
-  SpeedBonus: 0
-  TimeBonus: 0
-  DetectionBonnus: 0
-  EnemySpeedBonus: 0
-  SpeedPercentBonus: 0
-  TimePercentBonus: 0
-  DetectionPercentBonus: 0
-  EnemySpeedPercentBonus: 0
+  Prefab: {fileID: 3238616208693862824, guid: 8cb6e3185a130d74e8b418308b352d7f, type: 3}
+  PlayerSpeedIncrease: 0
+  PlayerSpeedDecrease: 0
+  TimeSpeedIncrease: 0
+  TimeSpeedDecrease: 0
+  DetectionIncrease: 0
+  DetectionDecrease: 0
+  EnemySpeedIncrease: 0
+  EnemySpeedDecrease: 0
+  Force: 0
   ItemType: 0

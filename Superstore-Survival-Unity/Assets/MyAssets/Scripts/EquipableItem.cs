@@ -62,7 +62,7 @@ public class EquipableItem : Item
     public float EnemySpeedIncrease;
     public float EnemySpeedDecrease;
     public float Force;
-  
+
     [Space]
     public ItemType ItemType;
 
