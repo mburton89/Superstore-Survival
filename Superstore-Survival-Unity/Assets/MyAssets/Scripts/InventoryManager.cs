@@ -14,8 +14,22 @@ public class InventoryManager : MonoBehaviour
     [SerializeField] Image draggableItem;
     [SerializeField] DropItemArea dropItemArea;
     [SerializeField] QuestionDialog questionDialog;
-
+    [SerializeField] DropItemArea UseItemArea;
+    public Item UsedItem;
+    public Camera Player;
+    private Vector3 PlayerDirection;
+    private Vector3 PlayerPosition;
+    private Quaternion PlayerRotation;
+    private Vector3 SpawnPosition;
     private ItemSlot draggedSlot;
+
+    private void Update()
+    {
+        PlayerPosition = Player.transform.position;
+        PlayerRotation = Player.transform.rotation;
+        PlayerDirection = Player.transform.forward;
+        SpawnPosition = PlayerPosition + PlayerDirection * 2;
+    }
 
     private void OnValidate()
     {
@@ -57,6 +71,8 @@ public class InventoryManager : MonoBehaviour
         craftingPanel.OnDropEvent += Drop;
         craftedPanel.OnDropEvent += Drop;
         dropItemArea.OnDropEvent += DiscardItem;
+        //Use
+        UseItemArea.OnDropEvent += UseItem;
     }
 
     private void InventoryRightClick(ItemSlot itemSlot)
@@ -197,5 +213,11 @@ public class InventoryManager : MonoBehaviour
         {
             inventory.AddItem(item);
         }
+    }
+    public void UseItem()
+    {
+
+        Instantiate(draggedSlot.Item.Prefab, SpawnPosition, PlayerRotation);
+        inventory.RemoveItem(draggedSlot.Item);
     }
 }

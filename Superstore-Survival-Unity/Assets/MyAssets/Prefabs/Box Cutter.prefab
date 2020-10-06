@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &7202152992376219501
+--- !u!1 &6838146143186739193
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,12 +8,13 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 7202152992376219495}
-  - component: {fileID: 7202152992376219494}
-  - component: {fileID: 7202152992376219489}
-  - component: {fileID: 7202152992376219488}
-  - component: {fileID: 7202152992376219491}
-  - component: {fileID: 7202152992376219490}
+  - component: {fileID: 6838146143186739198}
+  - component: {fileID: 6838146143186739199}
+  - component: {fileID: 6838146143186739196}
+  - component: {fileID: 6838146143186739197}
+  - component: {fileID: 6838146143186739194}
+  - component: {fileID: 6838146143186739195}
+  - component: {fileID: 6838146143186739192}
   m_Layer: 0
   m_Name: Box Cutter
   m_TagString: Untagged
@@ -21,13 +22,13 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &7202152992376219495
+--- !u!4 &6838146143186739198
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7202152992376219501}
+  m_GameObject: {fileID: 6838146143186739193}
   m_LocalRotation: {x: -0.7071068, y: -0, z: -0, w: 0.7071067}
   m_LocalPosition: {x: -0.591, y: 1.013, z: -19.81}
   m_LocalScale: {x: 7.628874, y: 7.628872, z: 7.628872}
@@ -35,21 +36,21 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!33 &7202152992376219494
+--- !u!33 &6838146143186739199
 MeshFilter:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7202152992376219501}
+  m_GameObject: {fileID: 6838146143186739193}
   m_Mesh: {fileID: 3912396089903812943, guid: f76aa602b4f9d59479bd82cb4397fcf5, type: 3}
---- !u!23 &7202152992376219489
+--- !u!23 &6838146143186739196
 MeshRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7202152992376219501}
+  m_GameObject: {fileID: 6838146143186739193}
   m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
@@ -82,13 +83,13 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!64 &7202152992376219488
+--- !u!64 &6838146143186739197
 MeshCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7202152992376219501}
+  m_GameObject: {fileID: 6838146143186739193}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
@@ -96,26 +97,26 @@ MeshCollider:
   m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: 3912396089903812943, guid: f76aa602b4f9d59479bd82cb4397fcf5, type: 3}
---- !u!135 &7202152992376219491
+--- !u!135 &6838146143186739194
 SphereCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7202152992376219501}
+  m_GameObject: {fileID: 6838146143186739193}
   m_Material: {fileID: 0}
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
   m_Radius: 0.073099
   m_Center: {x: 0.0007400244, y: -3.675587e-18, z: 0.0005172928}
---- !u!114 &7202152992376219490
+--- !u!114 &6838146143186739195
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7202152992376219501}
+  m_GameObject: {fileID: 6838146143186739193}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4ea7b9f34e599c94c90f559b0607161b, type: 3}
@@ -124,3 +125,19 @@ MonoBehaviour:
   item: {fileID: 11400000, guid: ecd32ad3abfd2c4439edcae10b897bb9, type: 2}
   inventory: {fileID: 0}
   itemPickupKeyCode: 101
+--- !u!54 &6838146143186739192
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6838146143186739193}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 1
+  m_Constraints: 0
+  m_CollisionDetection: 3

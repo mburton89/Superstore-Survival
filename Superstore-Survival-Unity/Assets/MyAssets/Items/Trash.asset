@@ -12,14 +12,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 518c63bea50c5b94699dbae67a51a737, type: 3}
   m_Name: Trash
   m_EditorClassIdentifier: 
+  id: a87f24dc46822164b83410b3cb81ece0
   ItemName: Trash
   Icon: {fileID: 21300000, guid: be65cc4db78b70d498297f85954e682e, type: 3}
-  SpeedBonus: 0
-  TimeBonus: 0
-  DetectionBonnus: 0
-  EnemySpeedBonus: 0
-  SpeedPercentBonus: 0
-  TimePercentBonus: 0
-  DetectionPercentBonus: 0
-  EnemySpeedPercentBonus: 0
+  Prefab: {fileID: 6890438125237720333, guid: ed4d88ba22f4986489535903bd564577, type: 3}
+  PlayerSpeedIncrease: 0
+  PlayerSpeedDecrease: 0
+  TimeSpeedIncrease: 0
+  TimeSpeedDecrease: 0
+  DetectionIncrease: 0
+  DetectionDecrease: 0
+  EnemySpeedIncrease: 0
+  EnemySpeedDecrease: 0
+  Force: 0
   ItemType: 0

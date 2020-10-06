@@ -10,6 +10,7 @@ public class Item : ScriptableObject
     public string ID { get { return id; } }
     public string ItemName;
     public Sprite Icon;
+    public GameObject Prefab;
 
     private void OnValidate()
     {
