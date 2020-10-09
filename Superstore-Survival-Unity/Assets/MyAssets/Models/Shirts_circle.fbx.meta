@@ -3,7 +3,32 @@ guid: bdfeb4ae39587f849a8e01cab1f03bc2
 ModelImporter:
   serializedVersion: 19300
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Hanger
+    second: {fileID: 2100000, guid: d9d7691bde3d00d4d98520b8304e87b9, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Shirt1
+    second: {fileID: 2100000, guid: b2e46a2773f065c49956ef386a4cfbe2, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Shirt2
+    second: {fileID: 2100000, guid: fadb25cbf19ec834aad94fd5b803d8ea, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Shirt3
+    second: {fileID: 2100000, guid: e0bfef09f1f23e74a9cf1461e521fa88, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Shirt4
+    second: {fileID: 2100000, guid: c61738e2a4d01d54390cc04c3261f240, type: 2}
   materials:
     materialImportMode: 1
     materialName: 0
