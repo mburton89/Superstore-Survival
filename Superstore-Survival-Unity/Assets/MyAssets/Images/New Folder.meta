@@ -1,5 +1,13 @@
 fileFormatVersion: 2
+<<<<<<< HEAD
+<<<<<<< HEAD:Superstore-Survival-Unity/Assets/MyAssets/Images/New Folder.meta
 guid: f683351f5744af34f91f9c6ed2f1e138
+=======
+guid: 5279a53ccd4fa464dae3c2e7237cfcfb
+>>>>>>> Level-Build-Backup:Superstore-Survival-Unity/Assets/MyAssets/Audio.meta
+=======
+guid: f683351f5744af34f91f9c6ed2f1e138
+>>>>>>> Level-Build-Backup
 folderAsset: yes
 DefaultImporter:
   externalObjects: {}

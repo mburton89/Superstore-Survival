@@ -22,6 +22,7 @@ public class InventoryManager : MonoBehaviour
     private Quaternion PlayerRotation;
     private Vector3 SpawnPosition;
     private ItemSlot draggedSlot;
+    public ItemBehavior ItemBehavior;
 
     private void Update()
     {
@@ -216,8 +217,9 @@ public class InventoryManager : MonoBehaviour
     }
     public void UseItem()
     {
-
-        Instantiate(draggedSlot.Item.Prefab, SpawnPosition, PlayerRotation);
+        
+        GameObject UsedItem = Instantiate(draggedSlot.Item.Prefab, SpawnPosition, PlayerRotation);
         inventory.RemoveItem(draggedSlot.Item);
+        UsedItem.AddComponent(typeof(ItemBehavior));
     }
 }

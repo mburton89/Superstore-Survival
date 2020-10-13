@@ -12,6 +12,7 @@ public class Item : ScriptableObject
     public Sprite Icon;
     public GameObject Prefab;
 
+
     private void OnValidate()
     {
         string path = AssetDatabase.GetAssetPath(this);
