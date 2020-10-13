@@ -3003,6 +3003,7 @@ MonoBehaviour:
   UseItemArea: {fileID: 3739471312850206548}
   UsedItem: {fileID: 0}
   Player: {fileID: 0}
+  ItemBehavior: {fileID: 0}
 --- !u!1 &306461023378503249
 GameObject:
   m_ObjectHideFlags: 0
