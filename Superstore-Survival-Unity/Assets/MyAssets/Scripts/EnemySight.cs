@@ -46,7 +46,6 @@ namespace UnityStandardAssets.Characters.ThirdPerson
         public float heightMultiplier;
         public float sightDist = 10;
 
-        [HideInInspector]
         public EnemySoundManager enemySoundManager;
         public HeartbeatManager heartbeat;
 

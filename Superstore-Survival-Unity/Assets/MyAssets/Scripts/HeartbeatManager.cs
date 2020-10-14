@@ -24,6 +24,20 @@ public class HeartbeatManager : MonoBehaviour
         audioSource.Play();
     }
 
+    public void ManagerUpdateSound(ManagerEnemySight.State state)
+    {
+        if (state == ManagerEnemySight.State.PATROL)
+        {
+            audioSource.clip = normalBeat;
+        }
+        else if (state == ManagerEnemySight.State.CHASE)
+        {
+            audioSource.clip = chaseBeat;
+        }
+
+        audioSource.Play();
+    }
+
     public void StopHeartbeat(Timer timer)
     {
         if (timer.timeRemaining == 0)
