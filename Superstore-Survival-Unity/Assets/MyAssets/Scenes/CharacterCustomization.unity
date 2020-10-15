@@ -11664,9 +11664,9 @@ MonoBehaviour:
     m_VerticalOverflow: 1
     m_LineSpacing: 1
   m_Text: "You've been working at C-Mart for - how long has it been now?\nFor far
-    too long now. The customers are aweful\nand management is even worse.\n\nThe
-    only way to get through the day is to try to not have to\ndo any work until your
-    shift is over, then hightail it out \nthe front door before anybody stops you."
+    too long now. The customers are awful\nand management is even worse.\n\nThe only
+    way to get through the day is to try to not have to\ndo any work until your shift
+    is over, then hightail it out \nthe front door before anybody stops you."
 --- !u!222 &1919709422
 CanvasRenderer:
   m_ObjectHideFlags: 0
