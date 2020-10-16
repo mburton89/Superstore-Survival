@@ -17,7 +17,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &3719053078400663111
 Transform:
   m_ObjectHideFlags: 0
@@ -343,7 +343,7 @@ Light:
   m_Type: 0
   m_Shape: 0
   m_Color: {r: 1, g: 0.95686275, b: 0.8392157, a: 1}
-  m_Intensity: 1737472.1
+  m_Intensity: 65988.305
   m_Range: 13.6
   m_SpotAngle: 130
   m_InnerSpotAngle: 15
@@ -412,7 +412,7 @@ MonoBehaviour:
   m_PointlightHDType: 0
   m_SpotLightShape: 1
   m_AreaLightShape: 0
-  m_Intensity: 789.9
+  m_Intensity: 30
   m_EnableSpotReflector: 0
   m_LuxAtDistance: 46.9
   m_InnerSpotPercent: 0
