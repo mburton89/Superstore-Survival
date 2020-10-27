@@ -3210,7 +3210,7 @@ MonoBehaviour:
   toggleInventoryKeys: 66000000
   toggleCraftedItemKeys: 63000000
   toggleCraftingKeys: 2d010000
-  Player: {fileID: 7351439408757617418, guid: 8acb1806d2bab51428dda34878af6fa1, type: 3}
+  Player: {fileID: 0}
   timeRemaining: 2
   timerIsRunning: 0
 --- !u!1 &306461023614362188

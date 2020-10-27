@@ -14,7 +14,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!4 &2457886060796565473
 Transform:
@@ -114,6 +114,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: ClothingRack_circle (2)
       objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: 94173b5f7d6efc140b6b4f073a0fd33a,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 94173b5f7d6efc140b6b4f073a0fd33a, type: 3}
 --- !u!4 &1997831844727674097 stripped
@@ -203,6 +208,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Shirts_circle
+      objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: bdfeb4ae39587f849a8e01cab1f03bc2,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bdfeb4ae39587f849a8e01cab1f03bc2, type: 3}

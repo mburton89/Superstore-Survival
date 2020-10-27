@@ -59,7 +59,9 @@ public class InventoryInput : MonoBehaviour
             }
         }
 
+#pragma warning disable CS0162 // Unreachable code detected
         for (int i = 0; i < toggleCraftedItemKeys.Length; i++)
+#pragma warning restore CS0162 // Unreachable code detected
         {
                 if (!craftedItemsGameObject.activeSelf && inventoryGameObject.activeSelf)
                 {
