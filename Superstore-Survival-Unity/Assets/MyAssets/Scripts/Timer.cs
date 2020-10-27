@@ -12,6 +12,8 @@ public class Timer : MonoBehaviour
     public float speed = 1f;
     private bool pauseGame = false;
     public GameObject Player;
+
+    public AudioManager audioManager;
     
     private void Start()
     {
@@ -33,6 +35,7 @@ public class Timer : MonoBehaviour
             }
             else
             {
+                audioManager.StartFinalMusic();
                 timeRemaining = 0;
                 timerIsRunning = false;
                 YouWin.Instance.Show();
