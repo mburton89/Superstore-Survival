@@ -76,7 +76,7 @@ public class InventoryInput : MonoBehaviour
                     if (Input.GetKeyDown(toggleCraftedItemKeys[i]))
                     {
                         craftingGameObject.SetActive(!craftingGameObject.activeSelf);
-                        audioSource.clip = craftedOpen;
+                        audioSource.clip = craftingOpen;
                         audioSource.Play();
                     }
                 }
@@ -93,7 +93,7 @@ public class InventoryInput : MonoBehaviour
                 if (Input.GetKeyDown(toggleCraftingKeys[i]))
                 {
                     craftedItemsGameObject.SetActive(!craftedItemsGameObject.activeSelf);
-                    audioSource.clip = craftingOpen;
+                    audioSource.clip = craftedOpen;
                     audioSource.Play();
 
                 if (craftedItemsGameObject.activeSelf)
