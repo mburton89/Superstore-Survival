@@ -17,6 +17,12 @@ public class InventoryInput : MonoBehaviour
     public float timeRemaining = 2;
     public bool timerIsRunning = false;
 
+    public AudioSource audioSource;
+
+    public AudioClip inventoryOpen;
+    public AudioClip craftedOpen;
+    public AudioClip craftingOpen;
+
     void Awake()
     {
         HideCursor();
@@ -43,7 +49,9 @@ public class InventoryInput : MonoBehaviour
             if (Input.GetKeyDown(toggleInventoryKeys[i]))
             {
                 inventoryGameObject.SetActive(!inventoryGameObject.activeSelf);
-                
+                audioSource.clip = inventoryOpen;
+                audioSource.Play();
+
                 if (inventoryGameObject.activeSelf)
                 {
                     craftedItemsGameObject.SetActive(false);
@@ -68,6 +76,8 @@ public class InventoryInput : MonoBehaviour
                     if (Input.GetKeyDown(toggleCraftedItemKeys[i]))
                     {
                         craftingGameObject.SetActive(!craftingGameObject.activeSelf);
+                        audioSource.clip = craftedOpen;
+                        audioSource.Play();
                     }
                 }
                 else
@@ -83,8 +93,10 @@ public class InventoryInput : MonoBehaviour
                 if (Input.GetKeyDown(toggleCraftingKeys[i]))
                 {
                     craftedItemsGameObject.SetActive(!craftedItemsGameObject.activeSelf);
+                    audioSource.clip = craftingOpen;
+                    audioSource.Play();
 
-                    if (craftedItemsGameObject.activeSelf)
+                if (craftedItemsGameObject.activeSelf)
                     {
                         inventoryGameObject.SetActive(false);
                         craftingGameObject.SetActive(false);

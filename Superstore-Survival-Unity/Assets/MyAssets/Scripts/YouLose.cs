@@ -7,7 +7,6 @@ using UnityEngine.SceneManagement;
 public class YouLose : MonoBehaviour
 {
     public static YouLose Instance;
-    public GameObject container;
     public Button retryButton;
 
     private void OnEnable()
@@ -29,10 +28,5 @@ public class YouLose : MonoBehaviour
     private void Awake()
     {
         Instance = this;
-    }
-
-    public void Show()
-    {
-        container.SetActive(true);
     }
 }

@@ -12,6 +12,11 @@ public class CraftingSystem : MonoBehaviour
     [SerializeField] Button craftButton;
     [SerializeField] Item item;
 
+    public AudioSource audioSource;
+
+    public AudioClip itemCrafted;
+    public AudioClip fullInventory;
+
     [SerializeField] public Item pileOfTrash;
     [SerializeField] public Item unsellableMerchandise;
     [SerializeField] public Item trashConfetti;
@@ -115,6 +120,8 @@ public class CraftingSystem : MonoBehaviour
     {
         if (craftedPanel.IsFull() == true)
         {
+            audioSource.clip = fullInventory;
+            audioSource.Play();
             inventoryFull.SetActive(true);
             Countdown();
         }
@@ -142,6 +149,8 @@ public class CraftingSystem : MonoBehaviour
         // Trash Pile
         if (craftingPanel.craftingSlots[0].Item.ItemName == "Trash" && craftingPanel.craftingSlots[1].Item.ItemName == "Trash")
         {
+            audioSource.clip = itemCrafted;
+            audioSource.Play();
             //Destroy itemOne and itemTwo
             Destroy(craftingPanel.craftingSlots[0].Item);
             Destroy(craftingPanel.craftingSlots[1].Item);
@@ -159,6 +168,8 @@ public class CraftingSystem : MonoBehaviour
         if (craftingPanel.craftingSlots[0].Item.ItemName == "Trash" && craftingPanel.craftingSlots[1].Item.ItemName == "Thefted Merchandise"
             || craftingPanel.craftingSlots[0].Item.ItemName == "Thefted Merchandise" && craftingPanel.craftingSlots[1].Item.ItemName == "Trash")
         {
+            audioSource.clip = itemCrafted;
+            audioSource.Play();
             //Destroy itemOne and itemTwo
             Destroy(craftingPanel.craftingSlots[0].Item);
             Destroy(craftingPanel.craftingSlots[1].Item);
@@ -176,6 +187,8 @@ public class CraftingSystem : MonoBehaviour
         if (craftingPanel.craftingSlots[0].Item.ItemName == "Trash" && craftingPanel.craftingSlots[1].Item.ItemName == "Box Cutter"
             || craftingPanel.craftingSlots[0].Item.ItemName == "Box Cutter" && craftingPanel.craftingSlots[1].Item.ItemName == "Trash")
         {
+            audioSource.clip = itemCrafted;
+            audioSource.Play();
             //Destroy itemOne and itemTwo
             Destroy(craftingPanel.craftingSlots[0].Item);
             Destroy(craftingPanel.craftingSlots[1].Item);
@@ -193,6 +206,8 @@ public class CraftingSystem : MonoBehaviour
         if (craftingPanel.craftingSlots[0].Item.ItemName == "Trash" && craftingPanel.craftingSlots[1].Item.ItemName == "Tape"
             || craftingPanel.craftingSlots[0].Item.ItemName == "Tape" && craftingPanel.craftingSlots[1].Item.ItemName == "Trash")
         {
+            audioSource.clip = itemCrafted;
+            audioSource.Play();
             //Destroy itemOne and itemTwo
             Destroy(craftingPanel.craftingSlots[0].Item);
             Destroy(craftingPanel.craftingSlots[1].Item);
@@ -210,6 +225,8 @@ public class CraftingSystem : MonoBehaviour
         if (craftingPanel.craftingSlots[0].Item.ItemName == "Trash" && craftingPanel.craftingSlots[1].Item.ItemName == "Cheap Ballpoint Pen"
             || craftingPanel.craftingSlots[0].Item.ItemName == "Cheap Ballpoint Pen" && craftingPanel.craftingSlots[1].Item.ItemName == "Trash")
         {
+            audioSource.clip = itemCrafted;
+            audioSource.Play();
             //Destroy itemOne and itemTwo
             Destroy(craftingPanel.craftingSlots[0].Item);
             Destroy(craftingPanel.craftingSlots[1].Item);
@@ -227,6 +244,8 @@ public class CraftingSystem : MonoBehaviour
         if (craftingPanel.craftingSlots[0].Item.ItemName == "Trash" && craftingPanel.craftingSlots[1].Item.ItemName == "Toilet Paper"
             || craftingPanel.craftingSlots[0].Item.ItemName == "Toilet Paper" && craftingPanel.craftingSlots[1].Item.ItemName == "Trash")
         {
+            audioSource.clip = itemCrafted;
+            audioSource.Play();
             //Destroy itemOne and itemTwo
             Destroy(craftingPanel.craftingSlots[0].Item);
             Destroy(craftingPanel.craftingSlots[1].Item);
@@ -244,6 +263,8 @@ public class CraftingSystem : MonoBehaviour
         if (craftingPanel.craftingSlots[0].Item.ItemName == "Trash" && craftingPanel.craftingSlots[1].Item.ItemName == "Broken Hanger"
             || craftingPanel.craftingSlots[0].Item.ItemName == "Broken Hanger" && craftingPanel.craftingSlots[1].Item.ItemName == "Trash")
         {
+            audioSource.clip = itemCrafted;
+            audioSource.Play();
             //Destroy itemOne and itemTwo
             Destroy(craftingPanel.craftingSlots[0].Item);
             Destroy(craftingPanel.craftingSlots[1].Item);
@@ -260,6 +281,8 @@ public class CraftingSystem : MonoBehaviour
         // Suspicious Activity
         if (craftingPanel.craftingSlots[0].Item.ItemName == "Thefted Merchandise" && craftingPanel.craftingSlots[1].Item.ItemName == "Thefted Merchandise")
         {
+            audioSource.clip = itemCrafted;
+            audioSource.Play();
             //Destroy itemOne and itemTwo
             Destroy(craftingPanel.craftingSlots[0].Item);
             Destroy(craftingPanel.craftingSlots[1].Item);
@@ -277,6 +300,8 @@ public class CraftingSystem : MonoBehaviour
         if (craftingPanel.craftingSlots[0].Item.ItemName == "Thefted Merchandise" && craftingPanel.craftingSlots[1].Item.ItemName == "Box Cutter"
             || craftingPanel.craftingSlots[0].Item.ItemName == "Box Cutter" && craftingPanel.craftingSlots[1].Item.ItemName == "Thefted Merchandise")
         {
+            audioSource.clip = itemCrafted;
+            audioSource.Play();
             //Destroy itemOne and itemTwo
             Destroy(craftingPanel.craftingSlots[0].Item);
             Destroy(craftingPanel.craftingSlots[1].Item);
@@ -294,6 +319,8 @@ public class CraftingSystem : MonoBehaviour
         if (craftingPanel.craftingSlots[0].Item.ItemName == "Thefted Merchandise" && craftingPanel.craftingSlots[1].Item.ItemName == "Tape"
             || craftingPanel.craftingSlots[0].Item.ItemName == "Tape" && craftingPanel.craftingSlots[1].Item.ItemName == "Thefted Merchandise")
         {
+            audioSource.clip = itemCrafted;
+            audioSource.Play();
             //Destroy itemOne and itemTwo
             Destroy(craftingPanel.craftingSlots[0].Item);
             Destroy(craftingPanel.craftingSlots[1].Item);
@@ -311,6 +338,8 @@ public class CraftingSystem : MonoBehaviour
         if (craftingPanel.craftingSlots[0].Item.ItemName == "Thefted Merchandise" && craftingPanel.craftingSlots[1].Item.ItemName == "Cheap Ballpoint Pen"
             || craftingPanel.craftingSlots[0].Item.ItemName == "Cheap Ballpoint Pen" && craftingPanel.craftingSlots[1].Item.ItemName == "Thefted Merchandise")
         {
+            audioSource.clip = itemCrafted;
+            audioSource.Play();
             //Destroy itemOne and itemTwo
             Destroy(craftingPanel.craftingSlots[0].Item);
             Destroy(craftingPanel.craftingSlots[1].Item);
@@ -328,6 +357,8 @@ public class CraftingSystem : MonoBehaviour
         if (craftingPanel.craftingSlots[0].Item.ItemName == "Thefted Merchandise" && craftingPanel.craftingSlots[1].Item.ItemName == "Toilet Paper"
             || craftingPanel.craftingSlots[0].Item.ItemName == "Toilet Paper" && craftingPanel.craftingSlots[1].Item.ItemName == "Thefted Merchandise")
         {
+            audioSource.clip = itemCrafted;
+            audioSource.Play();
             //Destroy itemOne and itemTwo
             Destroy(craftingPanel.craftingSlots[0].Item);
             Destroy(craftingPanel.craftingSlots[1].Item);
@@ -345,6 +376,8 @@ public class CraftingSystem : MonoBehaviour
         if (craftingPanel.craftingSlots[0].Item.ItemName == "Thefted Merchandise" && craftingPanel.craftingSlots[1].Item.ItemName == "Broken Hanger"
             || craftingPanel.craftingSlots[0].Item.ItemName == "Broken Hanger" && craftingPanel.craftingSlots[1].Item.ItemName == "Thefted Merchandise")
         {
+            audioSource.clip = itemCrafted;
+            audioSource.Play();
             //Destroy itemOne and itemTwo
             Destroy(craftingPanel.craftingSlots[0].Item);
             Destroy(craftingPanel.craftingSlots[1].Item);
@@ -361,6 +394,8 @@ public class CraftingSystem : MonoBehaviour
         // Emo's Paradise
         if (craftingPanel.craftingSlots[0].Item.ItemName == "Box Cutter" && craftingPanel.craftingSlots[1].Item.ItemName == "Box Cutter")
         {
+            audioSource.clip = itemCrafted;
+            audioSource.Play();
             //Destroy itemOne and itemTwo
             Destroy(craftingPanel.craftingSlots[0].Item);
             Destroy(craftingPanel.craftingSlots[1].Item);
@@ -378,6 +413,8 @@ public class CraftingSystem : MonoBehaviour
         if (craftingPanel.craftingSlots[0].Item.ItemName == "Box Cutter" && craftingPanel.craftingSlots[1].Item.ItemName == "Tape"
             || craftingPanel.craftingSlots[0].Item.ItemName == "Tape" && craftingPanel.craftingSlots[1].Item.ItemName == "Box Cutter")
         {
+            audioSource.clip = itemCrafted;
+            audioSource.Play();
             //Destroy itemOne and itemTwo
             Destroy(craftingPanel.craftingSlots[0].Item);
             Destroy(craftingPanel.craftingSlots[1].Item);
@@ -395,6 +432,8 @@ public class CraftingSystem : MonoBehaviour
         if (craftingPanel.craftingSlots[0].Item.ItemName == "Box Cutter" && craftingPanel.craftingSlots[1].Item.ItemName == "Cheap Ballpoint Pen"
             || craftingPanel.craftingSlots[0].Item.ItemName == "Cheap Ballpoint Pen" && craftingPanel.craftingSlots[1].Item.ItemName == "Box Cutter")
         {
+            audioSource.clip = itemCrafted;
+            audioSource.Play();
             //Destroy itemOne and itemTwo
             Destroy(craftingPanel.craftingSlots[0].Item);
             Destroy(craftingPanel.craftingSlots[1].Item);
@@ -412,6 +451,8 @@ public class CraftingSystem : MonoBehaviour
         if (craftingPanel.craftingSlots[0].Item.ItemName == "Box Cutter" && craftingPanel.craftingSlots[1].Item.ItemName == "Toilet Paper"
             || craftingPanel.craftingSlots[0].Item.ItemName == "Toilet Paper" && craftingPanel.craftingSlots[1].Item.ItemName == "Box Cutter")
         {
+            audioSource.clip = itemCrafted;
+            audioSource.Play();
             //Destroy itemOne and itemTwo
             Destroy(craftingPanel.craftingSlots[0].Item);
             Destroy(craftingPanel.craftingSlots[1].Item);
@@ -429,6 +470,8 @@ public class CraftingSystem : MonoBehaviour
         if (craftingPanel.craftingSlots[0].Item.ItemName == "Box Cutter" && craftingPanel.craftingSlots[1].Item.ItemName == "Broken Hanger"
             || craftingPanel.craftingSlots[0].Item.ItemName == "Broken Hanger" && craftingPanel.craftingSlots[1].Item.ItemName == "Box Cutter")
         {
+            audioSource.clip = itemCrafted;
+            audioSource.Play();
             //Destroy itemOne and itemTwo
             Destroy(craftingPanel.craftingSlots[0].Item);
             Destroy(craftingPanel.craftingSlots[1].Item);
@@ -445,6 +488,8 @@ public class CraftingSystem : MonoBehaviour
         // Tape Ball
         if (craftingPanel.craftingSlots[0].Item.ItemName == "Tape" && craftingPanel.craftingSlots[1].Item.ItemName == "Tape")
         {
+            audioSource.clip = itemCrafted;
+            audioSource.Play();
             //Destroy itemOne and itemTwo
             Destroy(craftingPanel.craftingSlots[0].Item);
             Destroy(craftingPanel.craftingSlots[1].Item);
@@ -462,6 +507,8 @@ public class CraftingSystem : MonoBehaviour
         if (craftingPanel.craftingSlots[0].Item.ItemName == "Tape" && craftingPanel.craftingSlots[1].Item.ItemName == "Cheap Ballpoint Pen"
             || craftingPanel.craftingSlots[0].Item.ItemName == "Cheap Ballpoint Pen" && craftingPanel.craftingSlots[1].Item.ItemName == "Tape")
         {
+            audioSource.clip = itemCrafted;
+            audioSource.Play();
             //Destroy itemOne and itemTwo
             Destroy(craftingPanel.craftingSlots[0].Item);
             Destroy(craftingPanel.craftingSlots[1].Item);
@@ -479,6 +526,8 @@ public class CraftingSystem : MonoBehaviour
         if (craftingPanel.craftingSlots[0].Item.ItemName == "Tape" && craftingPanel.craftingSlots[1].Item.ItemName == "Toilet Paper"
             || craftingPanel.craftingSlots[0].Item.ItemName == "Toilet Paper" && craftingPanel.craftingSlots[1].Item.ItemName == "Tape")
         {
+            audioSource.clip = itemCrafted;
+            audioSource.Play();
             //Destroy itemOne and itemTwo
             Destroy(craftingPanel.craftingSlots[0].Item);
             Destroy(craftingPanel.craftingSlots[1].Item);
@@ -496,6 +545,8 @@ public class CraftingSystem : MonoBehaviour
         if (craftingPanel.craftingSlots[0].Item.ItemName == "Tape" && craftingPanel.craftingSlots[1].Item.ItemName == "Broken Hanger"
             || craftingPanel.craftingSlots[0].Item.ItemName == "Broken Hanger" && craftingPanel.craftingSlots[1].Item.ItemName == "Tape")
         {
+            audioSource.clip = itemCrafted;
+            audioSource.Play();
             //Destroy itemOne and itemTwo
             Destroy(craftingPanel.craftingSlots[0].Item);
             Destroy(craftingPanel.craftingSlots[1].Item);
@@ -512,6 +563,8 @@ public class CraftingSystem : MonoBehaviour
         // Pen Missle
         if (craftingPanel.craftingSlots[0].Item.ItemName == "Cheap Ballpoint Pen" && craftingPanel.craftingSlots[1].Item.ItemName == "Cheap Ballpoint Pen")
         {
+            audioSource.clip = itemCrafted;
+            audioSource.Play();
             //Destroy itemOne and itemTwo
             Destroy(craftingPanel.craftingSlots[0].Item);
             Destroy(craftingPanel.craftingSlots[1].Item);
@@ -529,6 +582,8 @@ public class CraftingSystem : MonoBehaviour
         if (craftingPanel.craftingSlots[0].Item.ItemName == "Cheap Ballpoint Pen" && craftingPanel.craftingSlots[1].Item.ItemName == "Toilet Paper"
             || craftingPanel.craftingSlots[0].Item.ItemName == "Toilet Paper" && craftingPanel.craftingSlots[1].Item.ItemName == "Cheap Ballpoint Pen")
         {
+            audioSource.clip = itemCrafted;
+            audioSource.Play();
             //Destroy itemOne and itemTwo
             Destroy(craftingPanel.craftingSlots[0].Item);
             Destroy(craftingPanel.craftingSlots[1].Item);
@@ -546,6 +601,8 @@ public class CraftingSystem : MonoBehaviour
         if (craftingPanel.craftingSlots[0].Item.ItemName == "Cheap Ballpoint Pen" && craftingPanel.craftingSlots[1].Item.ItemName == "Broken Hanger"
             || craftingPanel.craftingSlots[0].Item.ItemName == "Broken Hanger" && craftingPanel.craftingSlots[1].Item.ItemName == "Cheap Ballpoint Pen")
         {
+            audioSource.clip = itemCrafted;
+            audioSource.Play();
             //Destroy itemOne and itemTwo
             Destroy(craftingPanel.craftingSlots[0].Item);
             Destroy(craftingPanel.craftingSlots[1].Item);
@@ -562,6 +619,8 @@ public class CraftingSystem : MonoBehaviour
         // Toilet Paper Hoarder
         if (craftingPanel.craftingSlots[0].Item.ItemName == "Toilet Paper" && craftingPanel.craftingSlots[1].Item.ItemName == "Toilet Paper")
         {
+            audioSource.clip = itemCrafted;
+            audioSource.Play();
             //Destroy itemOne and itemTwo
             Destroy(craftingPanel.craftingSlots[0].Item);
             Destroy(craftingPanel.craftingSlots[1].Item);
@@ -579,6 +638,8 @@ public class CraftingSystem : MonoBehaviour
         if (craftingPanel.craftingSlots[0].Item.ItemName == "Toilet Paper" && craftingPanel.craftingSlots[1].Item.ItemName == "Broken Hanger"
             || craftingPanel.craftingSlots[0].Item.ItemName == "Broken Hanger" && craftingPanel.craftingSlots[1].Item.ItemName == "Toilet Paper")
         {
+            audioSource.clip = itemCrafted;
+            audioSource.Play();
             //Destroy itemOne and itemTwo
             Destroy(craftingPanel.craftingSlots[0].Item);
             Destroy(craftingPanel.craftingSlots[1].Item);
@@ -595,6 +656,8 @@ public class CraftingSystem : MonoBehaviour
         // Redneck Nunchucks
         if (craftingPanel.craftingSlots[0].Item.ItemName == "Broken Hanger" && craftingPanel.craftingSlots[1].Item.ItemName == "Broken Hanger")
         {
+            audioSource.clip = itemCrafted;
+            audioSource.Play();
             //Destroy itemOne and itemTwo
             Destroy(craftingPanel.craftingSlots[0].Item);
             Destroy(craftingPanel.craftingSlots[1].Item);

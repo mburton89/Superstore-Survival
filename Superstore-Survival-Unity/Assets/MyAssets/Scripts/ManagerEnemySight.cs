@@ -36,6 +36,7 @@ namespace UnityStandardAssets.Characters.ThirdPerson
         public float chaseSpeed = 1f;
         public GameObject target;
         private float chaseTime = 10f;
+        public GameObject loseScreen;
 
         //Variables for Investigating
         private Vector3 investigateSpot;
@@ -46,8 +47,11 @@ namespace UnityStandardAssets.Characters.ThirdPerson
         public float heightMultiplier;
         public float sightDist = 10;
 
+        [HideInInspector]
         public ManagerEnemySoundManager enemySoundManager;
+
         public HeartbeatManager heartbeat;
+        public AudioManager audioManger;
 
         void Start()
         {
@@ -144,7 +148,8 @@ namespace UnityStandardAssets.Characters.ThirdPerson
                 timer = 0;
                 state = ManagerEnemySight.State.PATROL;
                 enemySoundManager.UpdateSound(State.PATROL);
-                heartbeat.ManagerUpdateSound(State.PATROL);
+                audioManger.UpdateMusic(State.PATROL);
+                heartbeat.UpdateSound(State.PATROL);
             }
         }
 
@@ -176,14 +181,16 @@ namespace UnityStandardAssets.Characters.ThirdPerson
                 {
                     state = ManagerEnemySight.State.PATROL;
                     enemySoundManager.UpdateSound(State.PATROL);
-                    heartbeat.ManagerUpdateSound(State.PATROL);
+                    audioManger.UpdateMusic(State.PATROL);
+                    heartbeat.UpdateSound(State.PATROL);
                 }
                 else if (hit.collider.gameObject.CompareTag("Player"))
                 {
                     if (state != ManagerEnemySight.State.CHASE)
                     {
                         enemySoundManager.UpdateSound(State.CHASE);
-                        heartbeat.ManagerUpdateSound(State.CHASE);
+                        audioManger.UpdateMusic(State.CHASE);
+                        heartbeat.UpdateSound(State.CHASE);
                     }
                     state = ManagerEnemySight.State.CHASE;
                     target = hit.collider.gameObject;
@@ -195,14 +202,16 @@ namespace UnityStandardAssets.Characters.ThirdPerson
                 {
                     state = ManagerEnemySight.State.PATROL;
                     enemySoundManager.UpdateSound(State.PATROL);
-                    heartbeat.ManagerUpdateSound(State.PATROL);
+                    audioManger.UpdateMusic(State.PATROL);
+                    heartbeat.UpdateSound(State.PATROL);
                 }
                 else if (hit.collider.gameObject.CompareTag("Player"))
                 {
                     if (state != ManagerEnemySight.State.CHASE)
                     {
                         enemySoundManager.UpdateSound(State.CHASE);
-                        heartbeat.ManagerUpdateSound(State.CHASE);
+                        audioManger.UpdateMusic(State.CHASE);
+                        heartbeat.UpdateSound(State.CHASE);
                     }
                     state = ManagerEnemySight.State.CHASE;
                     target = hit.collider.gameObject;
@@ -214,14 +223,16 @@ namespace UnityStandardAssets.Characters.ThirdPerson
                 {
                     state = ManagerEnemySight.State.PATROL;
                     enemySoundManager.UpdateSound(State.PATROL);
-                    heartbeat.ManagerUpdateSound(State.PATROL);
+                    audioManger.UpdateMusic(State.PATROL);
+                    heartbeat.UpdateSound(State.PATROL);
                 }
                 else if (hit.collider.gameObject.CompareTag("Player"))
                 {
                     if (state != ManagerEnemySight.State.CHASE)
                     {
                         enemySoundManager.UpdateSound(State.CHASE);
-                        heartbeat.ManagerUpdateSound(State.CHASE);
+                        audioManger.UpdateMusic(State.CHASE);
+                        heartbeat.UpdateSound(State.CHASE);
                     }
                     state = ManagerEnemySight.State.CHASE;
                     target = hit.collider.gameObject;
@@ -233,14 +244,16 @@ namespace UnityStandardAssets.Characters.ThirdPerson
                 {
                     state = ManagerEnemySight.State.PATROL;
                     enemySoundManager.UpdateSound(State.PATROL);
-                    heartbeat.ManagerUpdateSound(State.PATROL);
+                    audioManger.UpdateMusic(State.PATROL);
+                    heartbeat.UpdateSound(State.PATROL);
                 }
                 else if (hit.collider.gameObject.CompareTag("Player"))
                 {
                     if (state != ManagerEnemySight.State.CHASE)
                     {
                         enemySoundManager.UpdateSound(State.CHASE);
-                        heartbeat.ManagerUpdateSound(State.CHASE);
+                        audioManger.UpdateMusic(State.CHASE);
+                        heartbeat.UpdateSound(State.CHASE);
                     }
                     state = ManagerEnemySight.State.CHASE;
                     target = hit.collider.gameObject;
@@ -252,14 +265,16 @@ namespace UnityStandardAssets.Characters.ThirdPerson
                 {
                     state = ManagerEnemySight.State.PATROL;
                     enemySoundManager.UpdateSound(State.PATROL);
-                    heartbeat.ManagerUpdateSound(State.PATROL);
+                    audioManger.UpdateMusic(State.PATROL);
+                    heartbeat.UpdateSound(State.PATROL);
                 }
                 else if (hit.collider.gameObject.CompareTag("Player"))
                 {
                     if (state != ManagerEnemySight.State.CHASE)
                     {
                         enemySoundManager.UpdateSound(State.CHASE);
-                        heartbeat.ManagerUpdateSound(State.CHASE);
+                        audioManger.UpdateMusic(State.CHASE);
+                        heartbeat.UpdateSound(State.CHASE);
                     }
                     state = ManagerEnemySight.State.CHASE;
                     target = hit.collider.gameObject;
@@ -271,14 +286,16 @@ namespace UnityStandardAssets.Characters.ThirdPerson
                 {
                     state = ManagerEnemySight.State.PATROL;
                     enemySoundManager.UpdateSound(State.PATROL);
-                    heartbeat.ManagerUpdateSound(State.PATROL);
+                    audioManger.UpdateMusic(State.PATROL);
+                    heartbeat.UpdateSound(State.PATROL);
                 }
                 else if (hit.collider.gameObject.CompareTag("Player"))
                 {
                     if (state != ManagerEnemySight.State.CHASE)
                     {
                         enemySoundManager.UpdateSound(State.CHASE);
-                        heartbeat.ManagerUpdateSound(State.CHASE);
+                        audioManger.UpdateMusic(State.CHASE);
+                        heartbeat.UpdateSound(State.CHASE);
                     }
                     state = ManagerEnemySight.State.CHASE;
                     target = hit.collider.gameObject;
@@ -290,14 +307,16 @@ namespace UnityStandardAssets.Characters.ThirdPerson
                 {
                     state = ManagerEnemySight.State.PATROL;
                     enemySoundManager.UpdateSound(State.PATROL);
-                    heartbeat.ManagerUpdateSound(State.PATROL);
+                    audioManger.UpdateMusic(State.PATROL);
+                    heartbeat.UpdateSound(State.PATROL);
                 }
                 else if (hit.collider.gameObject.CompareTag("Player"))
                 {
                     if (state != ManagerEnemySight.State.CHASE)
                     {
                         enemySoundManager.UpdateSound(State.CHASE);
-                        heartbeat.ManagerUpdateSound(State.CHASE);
+                        audioManger.UpdateMusic(State.CHASE);
+                        heartbeat.UpdateSound(State.CHASE);
                     }
                     state = ManagerEnemySight.State.CHASE;
                     target = hit.collider.gameObject;
@@ -309,14 +328,16 @@ namespace UnityStandardAssets.Characters.ThirdPerson
                 {
                     state = ManagerEnemySight.State.PATROL;
                     enemySoundManager.UpdateSound(State.PATROL);
-                    heartbeat.ManagerUpdateSound(State.PATROL);
+                    audioManger.UpdateMusic(State.PATROL);
+                    heartbeat.UpdateSound(State.PATROL);
                 }
                 else if (hit.collider.gameObject.CompareTag("Player"))
                 {
                     if (state != ManagerEnemySight.State.CHASE)
                     {
                         enemySoundManager.UpdateSound(State.CHASE);
-                        heartbeat.ManagerUpdateSound(State.CHASE);
+                        audioManger.UpdateMusic(State.CHASE);
+                        heartbeat.UpdateSound(State.CHASE);
                     }
                     state = ManagerEnemySight.State.CHASE;
                     target = hit.collider.gameObject;
@@ -328,14 +349,16 @@ namespace UnityStandardAssets.Characters.ThirdPerson
                 {
                     state = ManagerEnemySight.State.PATROL;
                     enemySoundManager.UpdateSound(State.PATROL);
-                    heartbeat.ManagerUpdateSound(State.PATROL);
+                    audioManger.UpdateMusic(State.PATROL);
+                    heartbeat.UpdateSound(State.PATROL);
                 }
                 else if (hit.collider.gameObject.CompareTag("Player"))
                 {
                     if (state != ManagerEnemySight.State.CHASE)
                     {
                         enemySoundManager.UpdateSound(State.CHASE);
-                        heartbeat.ManagerUpdateSound(State.CHASE);
+                        audioManger.UpdateMusic(State.CHASE);
+                        heartbeat.UpdateSound(State.CHASE);
                     }
                     state = ManagerEnemySight.State.CHASE;
                     target = hit.collider.gameObject;
@@ -348,7 +371,8 @@ namespace UnityStandardAssets.Characters.ThirdPerson
             if (coll.collider.CompareTag("Player"))
             {
                 enemySoundManager.audioSource.Stop();
-                YouLose.Instance.Show();
+                audioManger.audioSource.Stop();
+                loseScreen.SetActive(true);
                 ToggleTime();
             }
         }
@@ -376,3 +400,4 @@ namespace UnityStandardAssets.Characters.ThirdPerson
         }
     }
 }
+

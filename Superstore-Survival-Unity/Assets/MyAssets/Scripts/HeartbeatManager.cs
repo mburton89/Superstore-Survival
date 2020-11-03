@@ -14,25 +14,37 @@ public class HeartbeatManager : MonoBehaviour
     {
         if (state == EnemySight.State.PATROL)
         {
-            audioSource.clip = normalBeat;
+            if (audioSource.clip != normalBeat)
+            {
+                audioSource.clip = normalBeat;
+            }
         }
         else if (state == EnemySight.State.CHASE)
         {
-            audioSource.clip = chaseBeat;
+            if (audioSource.clip != chaseBeat)
+            {
+                audioSource.clip = chaseBeat;
+            }
         }
 
         audioSource.Play();
     }
 
-    public void ManagerUpdateSound(ManagerEnemySight.State state)
+    public void UpdateSound(ManagerEnemySight.State state)
     {
         if (state == ManagerEnemySight.State.PATROL)
         {
-            audioSource.clip = normalBeat;
+            if (audioSource.clip != normalBeat)
+            {
+                audioSource.clip = normalBeat;
+            }
         }
         else if (state == ManagerEnemySight.State.CHASE)
         {
-            audioSource.clip = chaseBeat;
+            if (audioSource.clip != chaseBeat)
+            {
+                audioSource.clip = chaseBeat;
+            }
         }
 
         audioSource.Play();

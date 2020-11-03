@@ -24,6 +24,13 @@ public class InventoryManager : MonoBehaviour
     private ItemSlot draggedSlot;
     public ItemBehavior ItemBehavior;
 
+    public AudioSource audioSource;
+
+    public AudioClip itemHover;
+    public AudioClip itemSelected;
+    public AudioClip itemUsed;
+    public AudioClip itemDiscarded;
+
     private void Update()
     {
         PlayerPosition = Player.transform.position;
@@ -81,6 +88,8 @@ public class InventoryManager : MonoBehaviour
         EquipableItem equipableItem = itemSlot.Item as EquipableItem;
         if (equipableItem != null)
         {
+            audioSource.clip = itemSelected;
+            audioSource.Play();
             Equip(equipableItem);
         }
     }
@@ -90,6 +99,8 @@ public class InventoryManager : MonoBehaviour
         EquipableItem equipableItem = itemSlot.Item as EquipableItem;
         if (equipableItem != null)
         {
+            audioSource.clip = itemSelected;
+            audioSource.Play();
             Unequip(equipableItem);
         }
     }
@@ -99,6 +110,8 @@ public class InventoryManager : MonoBehaviour
         EquipableItem equipableItem = itemSlot.Item as EquipableItem;
         if (equipableItem != null)
         {
+            audioSource.clip = itemHover;
+            audioSource.Play();
             itemTooltip.ShowTooltip(equipableItem);
             craftedTooltip.ShowTooltip(equipableItem);
         }
@@ -181,6 +194,8 @@ public class InventoryManager : MonoBehaviour
         questionDialog.Show();
         ItemSlot itemSlot = draggedSlot;
         questionDialog.OnYesEvent += () => DestroyItemInSlot(itemSlot);
+        audioSource.clip = itemDiscarded;
+        audioSource.Play();
     }
 
     private void DestroyItemInSlot(ItemSlot itemSlot)
@@ -217,7 +232,8 @@ public class InventoryManager : MonoBehaviour
     }
     public void UseItem()
     {
-        
+        audioSource.clip = itemUsed;
+        audioSource.Play();
         GameObject UsedItem = Instantiate(draggedSlot.Item.Prefab, SpawnPosition, PlayerRotation);
         inventory.RemoveItem(draggedSlot.Item);
         UsedItem.AddComponent(typeof(ItemBehavior));
