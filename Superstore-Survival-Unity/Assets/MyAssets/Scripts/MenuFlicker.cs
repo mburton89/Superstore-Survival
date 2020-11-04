@@ -10,9 +10,9 @@ public class MenuFlicker : MonoBehaviour
 
     private void Update()
     {
-        randomNumber = Random.Range(1, 10);
+        randomNumber = Random.Range(1, 100);
 
-        if (randomNumber == 1)
+        if (randomNumber < 7)
         {
             darkScreen.SetActive(true);
         }
