@@ -30,7 +30,7 @@ public class DoorKey : MonoBehaviour
     void Update()
     {
         print(inTrigger);
-        if (inTrigger = true)
+        if (inTrigger == true)
         {
             if (Input.GetKeyDown(KeyCode.E))
             {

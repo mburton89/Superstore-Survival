@@ -31,7 +31,7 @@ public class DoorScript : MonoBehaviour
             {
                 if (doorKey)
                 {
-                    if (Input.GetKeyDown(KeyCode.E))
+                    if (Input.GetKeyDown(KeyCode.E) && close == true)
                     {
                         open = true;
                         close = false;
