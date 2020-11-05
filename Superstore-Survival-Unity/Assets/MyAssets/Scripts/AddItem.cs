@@ -10,6 +10,11 @@ public class AddItem : MonoBehaviour
 
     private bool isInRange;
 
+
+    private void Awake()
+    {
+        inventory = FindObjectOfType<Inventory>();
+    }
     void Update()
     {
         if (isInRange && Input.GetKeyDown(itemPickupKeyCode))
