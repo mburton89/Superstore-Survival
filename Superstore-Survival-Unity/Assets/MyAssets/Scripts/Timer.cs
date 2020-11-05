@@ -12,7 +12,11 @@ public class Timer : MonoBehaviour
     public float speed = 1f;
     private bool pauseGame = false;
     public GameObject Player;
-    
+    public GameObject youWin;
+
+    public HeartbeatManager heartbeat;
+    public AudioManager music;
+
     private void Start()
     {
         // Starts the timer automatically
@@ -35,7 +39,10 @@ public class Timer : MonoBehaviour
             {
                 timeRemaining = 0;
                 timerIsRunning = false;
-                YouWin.Instance.Show();
+                ToggleTime();
+                youWin.SetActive(true);
+                heartbeat.audioSource.Stop();
+                //music.audioSource.Stop();
             }
         }
     }
