@@ -4,14 +4,24 @@ using UnityEngine;
 
 public class Spawner : MonoBehaviour
 {
-    public GameObject[] items;
-    public GameObject spawner;
-    private int rand;
+    public GameObject[] baseItems;
+    private GameObject[] possibleSpawners;
+    private GameObject spawner;
+    private int itemToSpawn;
+    public int numberToSpawn;
 
-    private void Start()
+
+    private void Update()
     {
-        rand = Random.Range(0, items.Length);
-        Instantiate(items[rand], gameObject.transform.position, Quaternion.identity);
-        Destroy(spawner);
+        if (numberToSpawn != 0)
+        {
+            possibleSpawners = GameObject.FindGameObjectsWithTag("Spawn Location");
+            itemToSpawn = Random.Range(0, baseItems.Length);
+            spawner = possibleSpawners[Random.Range(0, possibleSpawners.Length)];
+            Instantiate(baseItems[itemToSpawn], spawner.transform.position, Quaternion.identity);
+            Destroy(spawner);
+            numberToSpawn -= 1;
+        }
+
     }
 }
