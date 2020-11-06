@@ -9,7 +9,12 @@ public class Spawner : MonoBehaviour
     private GameObject spawner;
     private int itemToSpawn;
     public int numberToSpawn;
+    public GameObject inventoryPanel;
 
+    private void Start()
+    {
+        inventoryPanel.SetActive(false);
+    }
 
     private void Update()
     {
