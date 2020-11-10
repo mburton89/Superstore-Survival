@@ -12,9 +12,7 @@ public class InventoryFix : MonoBehaviour
 
     void Awake()
     {
-        image.color = disabledColor;
         StartCoroutine(Fix());
-        image.color = normalColor
     }
 
     IEnumerator Fix()
