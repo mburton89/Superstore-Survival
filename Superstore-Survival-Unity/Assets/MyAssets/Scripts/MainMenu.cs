@@ -2,10 +2,13 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class MainMenu : MonoBehaviour
 {
     private Scene scene;
+    public GameObject fadeObject;
+    private Image fadeImage;
 
     private void Start()
     {
@@ -31,4 +34,5 @@ public class MainMenu : MonoBehaviour
     {
         SceneManager.LoadScene(scene.name);
     }
+
 }
