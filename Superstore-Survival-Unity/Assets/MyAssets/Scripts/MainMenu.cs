@@ -7,9 +7,17 @@ using UnityEngine.UI;
 public class MainMenu : MonoBehaviour
 {
     private Scene scene;
-    public GameObject fadeObject;
-    private Image fadeImage;
+    AsyncOperation loadingOperation;
+    public Slider progressBar;
+    public Text percentLoaded;
+    public CanvasGroup customizationPanel;
 
+    private void Update()
+    {
+        progressBar.value = Mathf.Clamp01(loadingOperation.progress / 0.9f);
+        float progressValue = Mathf.Clamp01(loadingOperation.progress / 0.9f);
+        percentLoaded.text = Mathf.Round(progressValue * 100) + "%";
+    }
     private void Start()
     {
         scene = SceneManager.GetActiveScene();
@@ -17,7 +25,23 @@ public class MainMenu : MonoBehaviour
 
     public void PlayGame()
     {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+        loadingOperation = SceneManager.LoadSceneAsync(SceneManager.GetActiveScene().buildIndex + 1);
+        StartCoroutine(FadeLoad(0.25f));
+    }
+
+    IEnumerator FadeLoad(float duration)
+    {
+        float startValue = customizationPanel.alpha;
+        float time = 0;
+
+        while (time < duration)
+        {
+            customizationPanel.alpha = Mathf.Lerp(startValue, 0, time / duration);
+            time += Time.deltaTime;
+            yield return null;
+        }
+
+        customizationPanel.alpha = 0;
     }
 
     public void QuitGame()
@@ -27,12 +51,12 @@ public class MainMenu : MonoBehaviour
 
     public void ReturnToMenu()
     {
-        SceneManager.LoadScene("MainMenu", LoadSceneMode.Additive);
+        SceneManager.LoadSceneAsync("MainMenu", LoadSceneMode.Additive);
     }
 
     public void RestartLevel()
     {
-        SceneManager.LoadScene(scene.name);
+        SceneManager.LoadSceneAsync(scene.name);
     }
 
 }
