@@ -7,9 +7,13 @@ using UnityEngine.UI;
 public class MainMenu : MonoBehaviour
 {
     private Scene scene;
-    public GameObject fadeObject;
-    private Image fadeImage;
+    AsyncOperation loadingOperation;
+    public Slider progressBar;
 
+    private void Update()
+    {
+        progressBar.value = Mathf.Clamp01(loadingOperation.progress / 0.9f);
+    }
     private void Start()
     {
         scene = SceneManager.GetActiveScene();
@@ -17,7 +21,7 @@ public class MainMenu : MonoBehaviour
 
     public void PlayGame()
     {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+        loadingOperation = SceneManager.LoadSceneAsync(SceneManager.GetActiveScene().buildIndex + 1);
     }
 
     public void QuitGame()
@@ -27,12 +31,12 @@ public class MainMenu : MonoBehaviour
 
     public void ReturnToMenu()
     {
-        SceneManager.LoadScene("MainMenu", LoadSceneMode.Additive);
+        SceneManager.LoadSceneAsync("MainMenu", LoadSceneMode.Additive);
     }
 
     public void RestartLevel()
     {
-        SceneManager.LoadScene(scene.name);
+        SceneManager.LoadSceneAsync(scene.name);
     }
 
 }
