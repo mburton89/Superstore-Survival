@@ -30,7 +30,7 @@ public class PAannouncements : MonoBehaviour
                 audioSource.clip = announcement[index];
                 audioSource.Play();
                 clipPlayed[index] = true;
-                delayNumber = Random.Range(20, 40);
+                delayNumber = Random.Range(30, 50);
             }
             else
             {
