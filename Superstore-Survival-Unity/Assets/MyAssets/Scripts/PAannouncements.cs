@@ -5,15 +5,16 @@ using UnityEngine;
 public class PAannouncements : MonoBehaviour
 {
     public AudioSource audioSource;
-
-    [SerializeField] AudioClip[] announcement;
- 
-    public float delayNumber;
+    [SerializeField] AudioClip[] announcement; 
+    public float delayNumber = 20;
+    public bool[] clipPlayed;
 
     private void Start()
     {
-        delayNumber = 5;
-        //delayNumber = Random.Range(20, 40);
+        for (int i = 0; i < announcement.Length; i++)
+        {
+            clipPlayed[i] = false;
+        }
     }
 
     private void Update()
@@ -23,9 +24,18 @@ public class PAannouncements : MonoBehaviour
         if (delayNumber <= 0)
         {
             int index = Random.Range(0, announcement.Length);
-            audioSource.clip = announcement[index];
-            audioSource.Play();
-            delayNumber = Random.Range(20, 40);
+            
+            if (clipPlayed[index] == false)
+            {
+                audioSource.clip = announcement[index];
+                audioSource.Play();
+                clipPlayed[index] = true;
+                delayNumber = Random.Range(20, 40);
+            }
+            else
+            {
+                delayNumber = .01f;
+            }
         }
     }
 }
