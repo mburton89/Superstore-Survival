@@ -8,32 +8,24 @@ public class PAannouncements : MonoBehaviour
 
     [SerializeField] AudioClip[] announcement;
  
-    float delayNumber;
+    public float delayNumber;
 
     private void Start()
     {
-
+        delayNumber = 5;
+        //delayNumber = Random.Range(20, 40);
     }
 
-    public void PlayAnnouncement()
+    private void Update()
     {
-        Delay();
-
-        if (delayNumber <= 0)
-        {
-            audioSource.Play();
-        }
-    }
-
-    public void Delay()
-    {
-        delayNumber = Random.Range(20, 40);
-
         delayNumber -= Time.deltaTime;
 
         if (delayNumber <= 0)
         {
-            delayNumber = 0;
+            int index = Random.Range(0, announcement.Length);
+            audioSource.clip = announcement[index];
+            audioSource.Play();
+            delayNumber = Random.Range(20, 40);
         }
     }
 }
