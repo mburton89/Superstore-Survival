@@ -1572,6 +1572,9 @@ MonoBehaviour:
   CraftedItemImage: {fileID: 306461023965682000}
   craftButton: {fileID: 306461023806055417}
   item: {fileID: 0}
+  audioSource: {fileID: 0}
+  itemCrafted: {fileID: 0}
+  fullInventory: {fileID: 0}
   pileOfTrash: {fileID: 11400000, guid: 7cf0a7480b07b36409eba73debfe27a9, type: 2}
   unsellableMerchandise: {fileID: 11400000, guid: 1c5f8344518dcd34dbc96ee96a9df85b,
     type: 2}
@@ -3004,6 +3007,11 @@ MonoBehaviour:
   UsedItem: {fileID: 0}
   Player: {fileID: 0}
   ItemBehavior: {fileID: 0}
+  audioSource: {fileID: 0}
+  itemHover: {fileID: 0}
+  itemSelected: {fileID: 0}
+  itemUsed: {fileID: 0}
+  itemDiscarded: {fileID: 0}
 --- !u!1 &306461023378503249
 GameObject:
   m_ObjectHideFlags: 0
@@ -3213,6 +3221,10 @@ MonoBehaviour:
   Player: {fileID: 0}
   timeRemaining: 2
   timerIsRunning: 0
+  audioSource: {fileID: 0}
+  inventoryOpen: {fileID: 0}
+  craftedOpen: {fileID: 0}
+  craftingOpen: {fileID: 0}
 --- !u!1 &306461023614362188
 GameObject:
   m_ObjectHideFlags: 0
@@ -5140,7 +5152,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ea4d527dbbc89bb4cbea7d502bdf3daf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  container: {fileID: 5940467380591186963}
   retryButton: {fileID: 5940467379265999741}
 --- !u!1 &5940467380609930014
 GameObject:

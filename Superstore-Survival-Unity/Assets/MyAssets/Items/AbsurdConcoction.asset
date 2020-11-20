@@ -15,12 +15,14 @@ MonoBehaviour:
   id: c0f1757a233bb434e9b1ed860e2f24b1
   ItemName: Absurd Concoction
   Icon: {fileID: 21300000, guid: fe477709ce149524baec72fe0f419d02, type: 3}
-  SpeedBonus: 0
-  TimeBonus: 0
-  DetectionBonnus: 0
-  EnemySpeedBonus: 0
-  SpeedPercentBonus: 0
-  TimePercentBonus: 0
-  DetectionPercentBonus: 0
-  EnemySpeedPercentBonus: 0
+  Prefab: {fileID: 2484639367162581125, guid: 14c0d6a1460bf8f4c92bcf814413c7f3, type: 3}
+  PlayerSpeedIncrease: 0
+  PlayerSpeedDecrease: 0
+  TimeSpeedIncrease: 0
+  TimeSpeedDecrease: 0
+  DetectionIncrease: 0
+  DetectionDecrease: 0
+  EnemySpeedIncrease: 0
+  EnemySpeedDecrease: 0
+  Force: 0
   ItemType: 0
