@@ -3,7 +3,19 @@ guid: 3f8d319d004951944ab31ad8bd7c8dad
 ModelImporter:
   serializedVersion: 19300
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: BallpointPenMat
+    second: {fileID: 8981436282136792470, guid: ad20db8e89cfaee4fafd5b33e8779089,
+      type: 3}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Clipboard_group1Mat
+    second: {fileID: 8635875755367874430, guid: 3f8d319d004951944ab31ad8bd7c8dad,
+      type: 3}
   materials:
     materialImportMode: 1
     materialName: 0

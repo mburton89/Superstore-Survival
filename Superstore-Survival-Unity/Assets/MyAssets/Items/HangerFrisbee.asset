@@ -15,12 +15,14 @@ MonoBehaviour:
   id: 07ac20ee41fc1f44da52ce4e508046b7
   ItemName: Hanger Frisbee
   Icon: {fileID: 21300000, guid: 78873db48d7747343afece106d457d5d, type: 3}
-  SpeedBonus: 0
-  TimeBonus: 0
-  DetectionBonnus: 0
-  EnemySpeedBonus: 0
-  SpeedPercentBonus: 0
-  TimePercentBonus: 0
-  DetectionPercentBonus: 0
-  EnemySpeedPercentBonus: 0
+  Prefab: {fileID: 2579717294898154224, guid: 52693699e679b0d4093434205f28946d, type: 3}
+  PlayerSpeedIncrease: 0
+  PlayerSpeedDecrease: 0
+  TimeSpeedIncrease: 0
+  TimeSpeedDecrease: 0
+  DetectionIncrease: 0
+  DetectionDecrease: 0
+  EnemySpeedIncrease: 0
+  EnemySpeedDecrease: 0
+  Force: 0
   ItemType: 0
