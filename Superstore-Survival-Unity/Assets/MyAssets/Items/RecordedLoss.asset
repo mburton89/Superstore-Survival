@@ -15,7 +15,7 @@ MonoBehaviour:
   id: a47cc2d556f39284199079907568fe5f
   ItemName: Recorded Loss
   Icon: {fileID: 21300000, guid: 0aa6f4d09185cfe4a9fa30b2f55d719a, type: 3}
-  Prefab: {fileID: 5373922098405458020, guid: ea12cc2cff8de574cb6e880cdc85ba6c, type: 3}
+  Prefab: {fileID: 4344419301863356969, guid: ea12cc2cff8de574cb6e880cdc85ba6c, type: 3}
   PlayerSpeedIncrease: 0
   PlayerSpeedDecrease: 0
   TimeSpeedIncrease: 0

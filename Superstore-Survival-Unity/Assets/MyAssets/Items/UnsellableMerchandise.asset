@@ -15,12 +15,14 @@ MonoBehaviour:
   id: 1c5f8344518dcd34dbc96ee96a9df85b
   ItemName: Unsellable Merchandise
   Icon: {fileID: 21300000, guid: 1b5ec96a8274b4f4e9fe792f2f43026e, type: 3}
-  SpeedBonus: 0
-  TimeBonus: 0
-  DetectionBonnus: 0
-  EnemySpeedBonus: 0
-  SpeedPercentBonus: 0
-  TimePercentBonus: 0
-  DetectionPercentBonus: 0
-  EnemySpeedPercentBonus: 0
+  Prefab: {fileID: 3883681714975861128, guid: 1175ce79ce5e65f44a71135d6bbbca89, type: 3}
+  PlayerSpeedIncrease: 0
+  PlayerSpeedDecrease: 0
+  TimeSpeedIncrease: 0
+  TimeSpeedDecrease: 0
+  DetectionIncrease: 0
+  DetectionDecrease: 0
+  EnemySpeedIncrease: 0
+  EnemySpeedDecrease: 0
+  Force: 0
   ItemType: 0
