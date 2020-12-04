@@ -15,7 +15,7 @@ MonoBehaviour:
   id: 65a4e8d56161ce94b98c817efc1a32f9
   ItemName: Incriminating Footage
   Icon: {fileID: 21300000, guid: a36d8dc055e0aaf418ecab6ddd96fa54, type: 3}
-  Prefab: {fileID: 2950576896741193158, guid: 74b6a12ff2a31874fb1fc9805deeb949, type: 3}
+  Prefab: {fileID: 4244746766746136498, guid: 74b6a12ff2a31874fb1fc9805deeb949, type: 3}
   PlayerSpeedIncrease: 0
   PlayerSpeedDecrease: 0
   TimeSpeedIncrease: 0
