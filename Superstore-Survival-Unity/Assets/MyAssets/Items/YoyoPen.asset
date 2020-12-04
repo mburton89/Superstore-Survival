@@ -15,12 +15,14 @@ MonoBehaviour:
   id: 72383321ed6cea942850e76d97ca4231
   ItemName: Yo-Yo Pen
   Icon: {fileID: 21300000, guid: 5d73dbe25cebeb947868d0143aa205b4, type: 3}
-  SpeedBonus: 0
-  TimeBonus: 0
-  DetectionBonnus: 0
-  EnemySpeedBonus: 0
-  SpeedPercentBonus: 0
-  TimePercentBonus: 0
-  DetectionPercentBonus: 0
-  EnemySpeedPercentBonus: 0
+  Prefab: {fileID: 6775530268318999264, guid: fd28593eb79ff014da3a1975a37d0f0e, type: 3}
+  PlayerSpeedIncrease: 0
+  PlayerSpeedDecrease: 0
+  TimeSpeedIncrease: 0
+  TimeSpeedDecrease: 0
+  DetectionIncrease: 0
+  DetectionDecrease: 0
+  EnemySpeedIncrease: 0
+  EnemySpeedDecrease: 0
+  Force: 0
   ItemType: 0

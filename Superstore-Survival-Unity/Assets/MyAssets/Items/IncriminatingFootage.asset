@@ -15,12 +15,14 @@ MonoBehaviour:
   id: 65a4e8d56161ce94b98c817efc1a32f9
   ItemName: Incriminating Footage
   Icon: {fileID: 21300000, guid: a36d8dc055e0aaf418ecab6ddd96fa54, type: 3}
-  SpeedBonus: 0
-  TimeBonus: 0
-  DetectionBonnus: 0
-  EnemySpeedBonus: 0
-  SpeedPercentBonus: 0
-  TimePercentBonus: 0
-  DetectionPercentBonus: 0
-  EnemySpeedPercentBonus: 0
+  Prefab: {fileID: 4244746766746136498, guid: 74b6a12ff2a31874fb1fc9805deeb949, type: 3}
+  PlayerSpeedIncrease: 0
+  PlayerSpeedDecrease: 0
+  TimeSpeedIncrease: 0
+  TimeSpeedDecrease: 0
+  DetectionIncrease: 0
+  DetectionDecrease: 0
+  EnemySpeedIncrease: 0
+  EnemySpeedDecrease: 0
+  Force: 0
   ItemType: 0

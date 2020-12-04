@@ -15,12 +15,14 @@ MonoBehaviour:
   id: 4169c356ad69f994c98de88a46332278
   ItemName: Trash Confetti
   Icon: {fileID: 21300000, guid: cd063341d036bce44badd60eb57583b4, type: 3}
-  SpeedBonus: 0
-  TimeBonus: 0
-  DetectionBonnus: 0
-  EnemySpeedBonus: 0
-  SpeedPercentBonus: 0
-  TimePercentBonus: 0
-  DetectionPercentBonus: 0
-  EnemySpeedPercentBonus: 0
+  Prefab: {fileID: 7678793098623497851, guid: 9ed05bfeee6865444a0c556e33dba353, type: 3}
+  PlayerSpeedIncrease: 0
+  PlayerSpeedDecrease: 0
+  TimeSpeedIncrease: 0
+  TimeSpeedDecrease: 0
+  DetectionIncrease: 0
+  DetectionDecrease: 0
+  EnemySpeedIncrease: 0
+  EnemySpeedDecrease: 0
+  Force: 0
   ItemType: 0

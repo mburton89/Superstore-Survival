@@ -15,7 +15,7 @@ MonoBehaviour:
   id: 706fec6d15ce32646844c80ae96ff99b
   ItemName: Toilet Paper Bomb
   Icon: {fileID: 21300000, guid: 2d3b2080763090b43ad9dd28b51585f6, type: 3}
-  Prefab: {fileID: 0}
+  Prefab: {fileID: 711440470898829462, guid: 6828b91d1e7159f4292e85a155a23a52, type: 3}
   PlayerSpeedIncrease: 0
   PlayerSpeedDecrease: 0
   TimeSpeedIncrease: 0

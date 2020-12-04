@@ -1,9 +1,24 @@
 fileFormatVersion: 2
-guid: 2d84df21ca9c740449590334874de6a1
+guid: ccd95d01d57674146a6e7d64a35cdc6b
 ModelImporter:
   serializedVersion: 19300
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Casette_Tape_Mat
+    second: {fileID: 2100000, guid: 211bd302d561d2242925dbef721a07c6, type: 2}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Casette Tape Texture
+    second: {fileID: 2800000, guid: a5a2a711d699b3041b60def596730aa0, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Post It Texture
+    second: {fileID: 2800000, guid: 3aaed59c334c3c340a802dab65191c2a, type: 3}
   materials:
     materialImportMode: 1
     materialName: 0

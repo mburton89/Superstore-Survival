@@ -15,12 +15,14 @@ MonoBehaviour:
   id: 378f561d10ef8d648843250a1508ed3b
   ItemName: Employee Of The Month
   Icon: {fileID: 21300000, guid: a2f5ed9d44ab36540be17353d3ee501a, type: 3}
-  SpeedBonus: 0
-  TimeBonus: 0
-  DetectionBonnus: 0
-  EnemySpeedBonus: 0
-  SpeedPercentBonus: 0
-  TimePercentBonus: 0
-  DetectionPercentBonus: 0
-  EnemySpeedPercentBonus: 0
+  Prefab: {fileID: 1037446622236357222, guid: a8f2b28dfddabf142b734522e2b2c644, type: 3}
+  PlayerSpeedIncrease: 0
+  PlayerSpeedDecrease: 0
+  TimeSpeedIncrease: 0
+  TimeSpeedDecrease: 0
+  DetectionIncrease: 0
+  DetectionDecrease: 0
+  EnemySpeedIncrease: 0
+  EnemySpeedDecrease: 0
+  Force: 0
   ItemType: 0
