@@ -15,12 +15,14 @@ MonoBehaviour:
   id: 8438cd273283efc40abd01cb6d2d7a1e
   ItemName: Toilet Paper Hoarder
   Icon: {fileID: 21300000, guid: 1007cf09573d513478843c0504178c31, type: 3}
-  SpeedBonus: 0
-  TimeBonus: 0
-  DetectionBonnus: 0
-  EnemySpeedBonus: 0
-  SpeedPercentBonus: 0
-  TimePercentBonus: 0
-  DetectionPercentBonus: 0
-  EnemySpeedPercentBonus: 0
+  Prefab: {fileID: 6992231368292093810, guid: 3b8bd23072692ed4a839d97db58b9cd8, type: 3}
+  PlayerSpeedIncrease: 0
+  PlayerSpeedDecrease: 0
+  TimeSpeedIncrease: 0
+  TimeSpeedDecrease: 0
+  DetectionIncrease: 0
+  DetectionDecrease: 0
+  EnemySpeedIncrease: 0
+  EnemySpeedDecrease: 0
+  Force: 0
   ItemType: 0

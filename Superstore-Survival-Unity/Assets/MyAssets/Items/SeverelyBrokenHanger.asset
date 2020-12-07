@@ -15,12 +15,14 @@ MonoBehaviour:
   id: 9ec19cc48dc1c8b4ba38003c2e17f21f
   ItemName: Severely Broken Hanger
   Icon: {fileID: 21300000, guid: 5807bf3cb2fb35248929fe0dfd6cf7e3, type: 3}
-  SpeedBonus: 0
-  TimeBonus: 0
-  DetectionBonnus: 0
-  EnemySpeedBonus: 0
-  SpeedPercentBonus: 0
-  TimePercentBonus: 0
-  DetectionPercentBonus: 0
-  EnemySpeedPercentBonus: 0
+  Prefab: {fileID: 3078381073229822885, guid: 0a3558637c9c88c4db8900ac71659dbb, type: 3}
+  PlayerSpeedIncrease: 0
+  PlayerSpeedDecrease: 0
+  TimeSpeedIncrease: 0
+  TimeSpeedDecrease: 0
+  DetectionIncrease: 0
+  DetectionDecrease: 0
+  EnemySpeedIncrease: 0
+  EnemySpeedDecrease: 0
+  Force: 0
   ItemType: 0

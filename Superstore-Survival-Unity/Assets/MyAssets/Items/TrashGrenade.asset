@@ -15,12 +15,14 @@ MonoBehaviour:
   id: 5644fc38a600e0545bc0506d12ddd442
   ItemName: Trash Grenade
   Icon: {fileID: 21300000, guid: cd6661cd54fd15f42b2ac04920f18fc0, type: 3}
-  SpeedBonus: 0
-  TimeBonus: 0
-  DetectionBonnus: 0
-  EnemySpeedBonus: 0
-  SpeedPercentBonus: 0
-  TimePercentBonus: 0
-  DetectionPercentBonus: 0
-  EnemySpeedPercentBonus: 0
+  Prefab: {fileID: 7212456929403450662, guid: ef714a5446c81ee47af9410fdeb954dc, type: 3}
+  PlayerSpeedIncrease: 0
+  PlayerSpeedDecrease: 0
+  TimeSpeedIncrease: 0
+  TimeSpeedDecrease: 0
+  DetectionIncrease: 0
+  DetectionDecrease: 0
+  EnemySpeedIncrease: 0
+  EnemySpeedDecrease: 0
+  Force: 0
   ItemType: 0

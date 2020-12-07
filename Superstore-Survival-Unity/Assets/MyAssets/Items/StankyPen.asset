@@ -15,12 +15,14 @@ MonoBehaviour:
   id: 65448b51a8b39944eb73cd66455d6375
   ItemName: Stanky Pen
   Icon: {fileID: 21300000, guid: 98b0f98a59ef48d4ebb4868f4aaff272, type: 3}
-  SpeedBonus: 0
-  TimeBonus: 0
-  DetectionBonnus: 0
-  EnemySpeedBonus: 0
-  SpeedPercentBonus: 0
-  TimePercentBonus: 0
-  DetectionPercentBonus: 0
-  EnemySpeedPercentBonus: 0
+  Prefab: {fileID: 912701672453508171, guid: 835b9b789b9b9a24c89a0f1588359830, type: 3}
+  PlayerSpeedIncrease: 0
+  PlayerSpeedDecrease: 0
+  TimeSpeedIncrease: 0
+  TimeSpeedDecrease: 0
+  DetectionIncrease: 0
+  DetectionDecrease: 0
+  EnemySpeedIncrease: 0
+  EnemySpeedDecrease: 0
+  Force: 0
   ItemType: 0
