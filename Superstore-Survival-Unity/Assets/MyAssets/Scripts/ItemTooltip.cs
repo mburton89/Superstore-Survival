@@ -6,6 +6,7 @@ using UnityEngine.UI;
 
 public class ItemTooltip : MonoBehaviour
 {
+#pragma warning disable 0649
     [SerializeField] Text ItemNameText;
 
     public void ShowTooltip (EquipableItem item)

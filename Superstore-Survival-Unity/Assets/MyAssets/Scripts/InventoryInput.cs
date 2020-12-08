@@ -5,6 +5,7 @@ using UnityStandardAssets.Characters.FirstPerson;
 
 public class InventoryInput : MonoBehaviour
 {
+#pragma warning disable 0649
     [SerializeField] GameObject inventoryGameObject;
     [SerializeField] GameObject craftedItemsGameObject;
     [SerializeField] GameObject craftingGameObject;

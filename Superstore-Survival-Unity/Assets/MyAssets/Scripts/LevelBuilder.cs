@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class LevelBuilder : MonoBehaviour
 {
+#pragma warning disable 0649
     public Room startShelfPrefab, endShelfPrefab;
     public List<Room> shelfPrefabs = new List<Room>();
     public Vector2 iterationRange = new Vector2(3, 10);

@@ -6,6 +6,7 @@ using UnityEngine.UI;
 
 public class InventoryManager : MonoBehaviour
 {
+#pragma warning disable 0649
     [SerializeField] Inventory inventory;
     [SerializeField] CraftingPanel craftingPanel;
     [SerializeField] Inventory craftedPanel;

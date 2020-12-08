@@ -6,6 +6,7 @@ using UnityEngine.UI;
 
 public class CraftingPanel : MonoBehaviour
 {
+#pragma warning disable 0649
     [SerializeField] Transform craftingSlotsParent;
 
     public CraftingItemSlot[] craftingSlots;

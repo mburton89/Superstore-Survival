@@ -7,6 +7,7 @@ using UnityStandardAssets.Characters.ThirdPerson;
 
 public class EnvironmentalHiding : MonoBehaviour
 {
+#pragma warning disable 0649
     [SerializeField] GameObject hidingPlace;
     [SerializeField] GameObject overlay;
     [SerializeField] FirstPersonController player;

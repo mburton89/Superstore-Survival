@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class PAannouncements : MonoBehaviour
 {
+#pragma warning disable 0649
     public AudioSource audioSource;
     [SerializeField] AudioClip[] announcement; 
     public float delayNumber = 20;

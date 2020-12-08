@@ -7,6 +7,7 @@ using UnityEngine.Serialization;
 
 public class Inventory : MonoBehaviour, IItemContainer
 {
+#pragma warning disable 0649
     [FormerlySerializedAs("items")]
     [SerializeField] List<Item> startingItems;
     [SerializeField] Transform itemsParent;
