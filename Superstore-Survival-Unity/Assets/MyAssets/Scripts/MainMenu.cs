@@ -18,7 +18,7 @@ public class MainMenu : MonoBehaviour
         float progressValue = Mathf.Clamp01(loadingOperation.progress / 0.9f);
         percentLoaded.text = Mathf.Round(progressValue * 100) + "%";
     }
-    private void Start()
+    private void Awake()
     {
         scene = SceneManager.GetActiveScene();
     }
@@ -51,12 +51,12 @@ public class MainMenu : MonoBehaviour
 
     public void ReturnToMenu()
     {
-        SceneManager.LoadSceneAsync("MainMenu", LoadSceneMode.Additive);
+        SceneManager.LoadSceneAsync("MainMenu", LoadSceneMode.Single);
     }
 
     public void RestartLevel()
     {
-        SceneManager.LoadSceneAsync(scene.name);
+        SceneManager.LoadSceneAsync(scene.name,LoadSceneMode.Single);
     }
 
 }
